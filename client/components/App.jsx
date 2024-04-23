@@ -9,9 +9,9 @@ import '../style.css';
 const App = () => {
   return (
     <div>
-      <Route>
+      <Routes>
         <Route path="/" element={<SplashPage />} />
-      </Route>
+      </Routes>
     </div>
   );
 };
