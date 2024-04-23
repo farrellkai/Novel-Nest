@@ -9,7 +9,9 @@ import '../style.css';
 const App = () => {
   return (
     <div>
-      <h1>Hello world!</h1>
+      <Route>
+        <Route path="/" element={<SplashPage />} />
+      </Route>
     </div>
   );
 };
