@@ -3,6 +3,8 @@ import { Route, Routes } from 'react-router-dom';
 
 //import pages
 import SplashPage from '../pages/SplashPage';
+import Login from '../pages/Login';
+import Signup from '../pages/Signup';
 
 import '../style.css';
 
