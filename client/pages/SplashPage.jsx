@@ -3,7 +3,8 @@ import React from 'react';
 const SplashPage = () => {
   return (
     <div>
-      <h1>Sup Bruh?</h1>
+      <button>Log In</button>
+      <button>Sign Up</button>
     </div>
   );
 };
