@@ -1,10 +1,15 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const SplashPage = () => {
   return (
     <div>
-      <button>Log In</button>
-      <button>Sign Up</button>
+      <Link to="/login">
+        <button>Log In</button>
+      </Link>
+      <Link to="/signup">
+        <button>Sign Up</button>
+      </Link>
     </div>
   );
 };
