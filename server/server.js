@@ -2,13 +2,16 @@ const path = require('path');
 const express = require('express');
 const app = express();
 
-const userRoutes = require('./routes/userRoutes');
+const userRouter = require('./routes/userRouter');
 
 const PORT = 3000;
 
 //parse request body
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
+
+//request to router
+app.use('/api/user', userRouter);
 
 //handles errors for any undefined route
 app.use('*', (req, res) => {
