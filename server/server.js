@@ -24,3 +24,8 @@ app.use((err, req, res, next) => {
   console.log(error.log);
   return res.status(500).json(error.message);
 });
+
+// start server
+app.listen(PORT, () => {
+  console.log(`Server listening on port: ${PORT}...`);
+});
