@@ -12,3 +12,15 @@ app.use(express.json());
 app.use('*', (req, res) => {
   return res.status(404).send('Page not found');
 });
+
+//Global error handler
+app.use((err, req, res, next) => {
+  const defaultErr = {
+    log: 'Error in middleware function',
+    status: 500,
+    message: { err: 'Error' },
+  };
+  const error = Object.assign({}, defaultErr, err);
+  console.log(error.log);
+  return res.status(500).json(error.message);
+});
