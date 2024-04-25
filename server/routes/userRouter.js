@@ -4,7 +4,7 @@ const userController = require('../controllers/userController');
 const userRouter = express.Router();
 
 //retrieve user data from db
-userRouter.get('/', (req, res) => {
+userRouter.get('/', userController.findUser, (req, res) => {
   return res.status(200); //more will go here later
 });
 
