@@ -8,4 +8,9 @@ userRouter.get('/', (req, res) => {
   return res.status(200); //more will go here later
 });
 
+//submit user data into db
+userRouter.post('/', (req, res) => {
+  return res.sendStatus(200);
+});
+
 module.exports = userRouter;
