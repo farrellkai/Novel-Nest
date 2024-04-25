@@ -13,4 +13,9 @@ userRouter.post('/', (req, res) => {
   return res.sendStatus(200);
 });
 
+//delete user data from db
+userRouter.delete('/:id', (req, res) => {
+  return res.sendStatus(200);
+});
+
 module.exports = userRouter;
