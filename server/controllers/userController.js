@@ -1,13 +1,16 @@
-const db = require('../models/entryModel');
+const client = require('../models/index.ts');
 
 const userController = {};
 
 //find if username exists in db
 userController.findUser = async (req, res, next) => {
   const { username } = req.body;
-  const query = `SELECT * FROM users WHERE username=${username}`;
+  //console.log('username is ', username);
+  const query = 'SELECT * FROM users';
   try {
-    const data = await db.query(query);
+    //console.log(client);
+    const data = await client.connect.query(query);
+    //console.log(data);
     return next;
   } catch (err) {
     return next({
