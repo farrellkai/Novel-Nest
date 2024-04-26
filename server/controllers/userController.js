@@ -8,6 +8,7 @@ userController.findUser = async (req, res, next) => {
   const query = `SELECT * FROM users WHERE username=${username}`;
   try {
     const data = await db.query(query);
+    return next;
   } catch {}
 };
 
