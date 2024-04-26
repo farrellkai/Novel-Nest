@@ -1,4 +1,4 @@
-import db from '../models/entryModel';
+const db = require('../models/entryModel');
 
 const userController = {};
 
