@@ -9,7 +9,13 @@ userController.findUser = async (req, res, next) => {
   try {
     const data = await db.query(query);
     return next;
-  } catch {}
+  } catch (err) {
+    return next({
+      log: 'Error in userController.findUser middleware function',
+      status: 500,
+      message: { err: 'cannot find user' },
+    });
+  }
 };
 
 module.exports = userController;
