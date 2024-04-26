@@ -6,6 +6,8 @@ const userController = {};
 userController.findUser = async (req, res, next) => {
   const { username } = req.body;
   const query = `SELECT * FROM users WHERE username=${username}`;
+  try {
+  } catch {}
 };
 
 module.exports = userController;
