@@ -9,7 +9,7 @@ userRouter.get('/', userController.findUser, (req, res) => {
 });
 
 //submit user data into db
-userRouter.post('/', (req, res) => {
+userRouter.post('/', userController.findUser, (req, res) => {
   return res.sendStatus(200);
 });
 
