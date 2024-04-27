@@ -18,6 +18,7 @@ userRouter.post(
   '/',
   userController.findUser,
   userController.allowUser,
+  userController.createUser,
   (req, res) => {
     return res.sendStatus(200);
   }
