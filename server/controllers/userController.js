@@ -96,4 +96,7 @@ userController.varifyUser = async (req, res, next) => {
   return next();
 };
 
+//remove user from db
+userController.deleteUser = async (req, res, next) => {};
+
 module.exports = userController;
