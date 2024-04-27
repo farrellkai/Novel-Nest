@@ -101,6 +101,7 @@ userController.deleteUser = async (req, res, next) => {
   const { id } = req.params;
   const query = 'DELETE FROM users WHERE user_id=$1';
   try {
+    await db.query(query, id);
   } catch (err) {}
 };
 
