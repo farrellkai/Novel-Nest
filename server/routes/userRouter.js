@@ -26,7 +26,7 @@ userRouter.post(
 );
 
 //delete user data from db
-userRouter.delete('/:id', (req, res) => {
+userRouter.delete('/:id', userController.deleteUser, (req, res) => {
   return res.sendStatus(200);
 });
 
