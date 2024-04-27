@@ -4,8 +4,8 @@ const userController = require('../controllers/userController');
 const userRouter = express.Router();
 
 //retrieve user data from db
-userRouter.get(
-  '/',
+userRouter.post(
+  '/login',
   userController.findUser,
   userController.varifyUser,
   (req, res) => {
@@ -15,7 +15,7 @@ userRouter.get(
 
 //submit user data into db
 userRouter.post(
-  '/',
+  '/signup',
   userController.findUser,
   userController.allowUser,
   userController.allowEmail,
