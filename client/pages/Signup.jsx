@@ -42,7 +42,13 @@ const Signup = () => {
       <input type="password" name="password" id="password" />
       <p id="conpass">Confirm Password</p>
       <input type="password" name="conpassword" id="conpassword" />
-      <button>Submit</button>
+      <button
+        className="registerButton"
+        id="registerButton"
+        onClick={registerUser}
+      >
+        Submit
+      </button>
     </div>
   );
 };
