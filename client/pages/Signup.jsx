@@ -1,6 +1,8 @@
 import React from 'react';
 
 const Signup = () => {
+  const registerUser = async () => {};
+
   return (
     <div>
       <p id="user">Username</p>
