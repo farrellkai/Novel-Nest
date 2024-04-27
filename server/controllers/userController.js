@@ -35,7 +35,9 @@ userController.allowUser = async (req, res, next) => {
 };
 
 //check if email is already taken
-userController.allowEmail = async (req, res, next) => {};
+userController.allowEmail = async (req, res, next) => {
+  const { email } = req.body;
+};
 
 //submit user's data to database
 userController.createUser = async (req, res, next) => {
