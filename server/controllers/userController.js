@@ -19,4 +19,7 @@ userController.findUser = async (req, res, next) => {
   }
 };
 
+//check if user's password matches inputted password
+userController.varifyUser = async (req, res, next) => {};
+
 module.exports = userController;
