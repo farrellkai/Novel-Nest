@@ -28,6 +28,12 @@ userController.allowUser = async (req, res, next) => {
       status: 409,
       message: { err: 'username is not available' },
     });
+  if (email === res.locals.email)
+    return next({
+      log: 'Error in userController.allowUser middleware function',
+      status: 409,
+      message: { err: 'email address is already registered' },
+    });
 };
 
 //check if user's password matches inputted password
