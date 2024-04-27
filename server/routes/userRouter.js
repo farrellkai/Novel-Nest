@@ -25,6 +25,11 @@ userRouter.post(
   }
 );
 
+//deactivate user account
+userRouter.patch('/deactivate/:id', (req, res) => {
+  return res.sendStatus(200);
+});
+
 //delete user data from db
 userRouter.delete('/:id', userController.deleteUser, (req, res) => {
   return res.sendStatus(200);
