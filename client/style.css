@@ -1,0 +1,18 @@
+body {
+  background-image: url('./library-background-hgd4xlhw1tk49yyf.jpg');
+}
+
+#wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+#login {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border: 2px solid black; /* Add border */
+  padding: 20px; /* Add some padding for better appearance */
+}

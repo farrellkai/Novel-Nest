@@ -26,14 +26,16 @@ const Login = () => {
   };
 
   return (
-    <div>
-      <p id="user">Username</p>
-      <input type="text" name="username" id="username" />
-      <p id="pass">Password</p>
-      <input type="password" name="password" id="password" />
-      <button className="loginButton" id="loginButton" onClick={verifyUser}>
-        Login
-      </button>
+    <div id="wrapper">
+      <div id="login">
+        <p id="user">Username</p>
+        <input type="text" name="username" id="username" />
+        <p id="pass">Password</p>
+        <input type="password" name="password" id="password" />
+        <button className="loginButton" id="loginButton" onClick={verifyUser}>
+          Login
+        </button>
+      </div>
     </div>
   );
 };
