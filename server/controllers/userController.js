@@ -19,6 +19,9 @@ userController.findUser = async (req, res, next) => {
   }
 };
 
+//check if username/email is already taken
+userController.allowUser = async (req, res, next) => {};
+
 //check if user's password matches inputted password
 userController.varifyUser = async (req, res, next) => {
   //error to be thrown if username does not exist or password does not match username
