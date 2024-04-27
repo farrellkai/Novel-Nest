@@ -41,6 +41,8 @@ userController.allowUser = async (req, res, next) => {
 //submit user's data to database
 userController.createUser = async (req, res, next) => {
   const { username, email, password } = req.body;
+  const query =
+    'INSERT INTO users (username, email, password) VALUES ($1, $2, $3)';
 };
 
 //check if user's password matches inputted password
