@@ -27,7 +27,9 @@ const Signup = () => {
         console.log('WE GOOD!!!');
         console.log(response);
       }
-    } catch (err) {}
+    } catch (err) {
+      console.log('Error:', err);
+    }
   };
 
   return (
