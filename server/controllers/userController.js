@@ -10,7 +10,7 @@ userController.findUser = async (req, res, next) => {
   const query = 'SELECT * FROM users WHERE username=$1';
   try {
     const data = await db.query(query, [username]);
-    console.log(data.rows);
+    res.locals.user = data.rows[0];
     return next;
   } catch (err) {
     return next({
