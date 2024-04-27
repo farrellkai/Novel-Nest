@@ -39,7 +39,9 @@ userController.allowUser = async (req, res, next) => {
 };
 
 //submit user's data to database
-userController.createUser = async (req, res, next) => {};
+userController.createUser = async (req, res, next) => {
+  const { username, email, password } = req.body;
+};
 
 //check if user's password matches inputted password
 userController.varifyUser = async (req, res, next) => {
