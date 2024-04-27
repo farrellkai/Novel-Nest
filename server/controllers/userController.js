@@ -37,6 +37,7 @@ userController.allowUser = async (req, res, next) => {
 //check if email is already taken
 userController.allowEmail = async (req, res, next) => {
   const { email } = req.body;
+  const query = 'SELECT * FROM users WHERE email=$1';
 };
 
 //submit user's data to database
