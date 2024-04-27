@@ -30,6 +30,11 @@ userRouter.patch('/deactivate/:id', (req, res) => {
   return res.sendStatus(200);
 });
 
+//activate user account
+userRouter.patch('/activate/:id', (req, res) => {
+  return res.sendStatus(200);
+});
+
 //delete user data from db
 userRouter.delete('/:id', userController.deleteUser, (req, res) => {
   return res.sendStatus(200);
