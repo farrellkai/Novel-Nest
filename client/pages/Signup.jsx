@@ -10,6 +10,17 @@ const Signup = () => {
     if (password !== conPassword) throw new Error('passwords do not match');
 
     try {
+      const response = await fetch('/api/user/signup', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          username: username,
+          email: email,
+          password: password,
+        }),
+      });
     } catch (err) {}
   };
 
