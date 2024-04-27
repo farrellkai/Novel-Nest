@@ -28,6 +28,7 @@ userController.varifyUser = async (req, res, next) => {
     message: { err: 'incorrect username or password' },
   };
   if (!res.locals.user) return next(error);
+  const { password } = req.body;
 };
 
 module.exports = userController;
