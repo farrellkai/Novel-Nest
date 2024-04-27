@@ -14,9 +14,14 @@ userRouter.get(
 );
 
 //submit user data into db
-userRouter.post('/', userController.findUser, (req, res) => {
-  return res.sendStatus(200);
-});
+userRouter.post(
+  '/',
+  userController.findUser,
+  userController.allowUser,
+  (req, res) => {
+    return res.sendStatus(200);
+  }
+);
 
 //delete user data from db
 userRouter.delete('/:id', (req, res) => {
