@@ -9,7 +9,7 @@ userRouter.get(
   userController.findUser,
   userController.varifyUser,
   (req, res) => {
-    return res.status(200); //more will go here later
+    return res.sendStatus(200);
   }
 );
 
