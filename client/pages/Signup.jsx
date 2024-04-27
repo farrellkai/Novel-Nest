@@ -6,6 +6,8 @@ const Signup = () => {
     const email = document.getElementById('email').value;
     const password = document.getElementById('password').value;
     const conPassword = document.getElementById('conpassword').value;
+
+    if (password !== conPassword) throw new Error('passwords do not match');
   };
 
   return (
