@@ -40,6 +40,12 @@ userController.allowEmail = async (req, res, next) => {
   const query = 'SELECT * FROM users WHERE email=$1';
   try {
     const data = await db.query(query, [email]);
+    if (data)
+      return next({
+        log: 'Error in userController.allowEmail middleware function',
+        status: 409,
+        message: { err: 'email address already registered' },
+      });
   } catch (err) {}
 };
 
