@@ -7,6 +7,7 @@ const Login = () => {
       <input type="text" />
       <h1>'Password'</h1>
       <input type="password" />
+      <button>Login</button>
     </div>
   );
 };
