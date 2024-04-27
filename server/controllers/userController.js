@@ -23,13 +23,14 @@ userController.findUser = async (req, res, next) => {
 //check if username/email is already taken
 userController.allowUser = async (req, res, next) => {
   const { username, email } = req.body;
-  if (username === res.locals.username)
+  if (username === res.locals.user.username) {
     return next({
       log: 'Error in userController.allowUser middleware function',
       status: 409,
       message: { err: 'username is not available' },
     });
-  if (email === res.locals.email)
+  }
+  if (email === res.locals.user.email)
     return next({
       log: 'Error in userController.allowUser middleware function',
       status: 409,
