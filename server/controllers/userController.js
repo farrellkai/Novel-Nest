@@ -101,8 +101,15 @@ userController.deleteUser = async (req, res, next) => {
   const { id } = req.params;
   const query = 'DELETE FROM users WHERE user_id=$1';
   try {
-    await db.query(query, id);
-  } catch (err) {}
+    const data = await db.query(query, id);
+    console.log(data.rows[0]);
+  } catch (err) {
+    return next({
+      log: 'Error in userController.deleteUser middleware function',
+      status: 500,
+      message: { err: 'cannot delete user' },
+    });
+  }
 };
 
 module.exports = userController;
