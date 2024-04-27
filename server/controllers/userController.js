@@ -20,6 +20,13 @@ userController.findUser = async (req, res, next) => {
 };
 
 //check if user's password matches inputted password
-userController.varifyUser = async (req, res, next) => {};
+userController.varifyUser = async (req, res, next) => {
+  //error to be thrown if username does not exist or password does not match username
+  const error = {
+    log: 'Error in userController.varifyUser middleware function',
+    status: 401,
+    message: { err: 'incorrect username or password' },
+  };
+};
 
 module.exports = userController;
