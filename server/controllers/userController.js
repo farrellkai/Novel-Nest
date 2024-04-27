@@ -27,6 +27,7 @@ userController.varifyUser = async (req, res, next) => {
     status: 401,
     message: { err: 'incorrect username or password' },
   };
+  if (!res.locals.user) return next(error);
 };
 
 module.exports = userController;
