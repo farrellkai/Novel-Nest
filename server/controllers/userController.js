@@ -103,6 +103,7 @@ userController.deleteUser = async (req, res, next) => {
   try {
     const data = await db.query(query, id);
     console.log(data.rows[0]);
+    return next();
   } catch (err) {
     return next({
       log: 'Error in userController.deleteUser middleware function',
