@@ -47,7 +47,13 @@ userController.createUser = async (req, res, next) => {
     await db.query(query, [username, email, password]);
     console.log('***USER CREATED***');
     return next();
-  } catch {}
+  } catch (err) {
+    return next({
+      log: 'Error in userController.createUser middleware function',
+      status: 500,
+      message: { err: 'cannot create user' },
+    });
+  }
 };
 
 //check if user's password matches inputted password
