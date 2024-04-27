@@ -21,6 +21,12 @@ const Signup = () => {
           password: password,
         }),
       });
+
+      if (!response.ok) throw new Error('something went wrong');
+      else if (response.ok) {
+        console.log('WE GOOD!!!');
+        console.log(response);
+      }
     } catch (err) {}
   };
 
