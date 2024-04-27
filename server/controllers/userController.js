@@ -1,4 +1,5 @@
 const db = require('../models/entryModel');
+const { use } = require('../routes/userRouter');
 
 const userController = {};
 
@@ -36,6 +37,9 @@ userController.allowUser = async (req, res, next) => {
     });
   return next();
 };
+
+//submit user's data to database
+userController.createUser = async (req, res, next) => {};
 
 //check if user's password matches inputted password
 userController.varifyUser = async (req, res, next) => {
