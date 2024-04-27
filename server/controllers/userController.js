@@ -29,6 +29,7 @@ userController.varifyUser = async (req, res, next) => {
   };
   if (!res.locals.user) return next(error);
   const { password } = req.body;
+  if (password !== res.locals.user.password) return next(error);
 };
 
 module.exports = userController;
