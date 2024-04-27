@@ -1,7 +1,12 @@
 import React from 'react';
 
 const Signup = () => {
-  const registerUser = async () => {};
+  const registerUser = async () => {
+    const username = document.getElementById('username').value;
+    const email = document.getElementById('email').value;
+    const password = document.getElementById('password').value;
+    const conPassword = document.getElementById('conpassword').value;
+  };
 
   return (
     <div>
