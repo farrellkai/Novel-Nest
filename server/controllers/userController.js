@@ -43,6 +43,8 @@ userController.createUser = async (req, res, next) => {
   const { username, email, password } = req.body;
   const query =
     'INSERT INTO users (username, email, password) VALUES ($1, $2, $3)';
+  try {
+  } catch {}
 };
 
 //check if user's password matches inputted password
