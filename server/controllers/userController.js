@@ -34,6 +34,7 @@ userController.allowUser = async (req, res, next) => {
       status: 409,
       message: { err: 'email address is already registered' },
     });
+  return next();
 };
 
 //check if user's password matches inputted password
