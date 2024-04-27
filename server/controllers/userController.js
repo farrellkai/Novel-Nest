@@ -7,9 +7,9 @@ userController.findUser = async (req, res, next) => {
   const { username } = req.body;
   // console.log('client is ', client);
   // console.log('CONFIG IS:', config);
-  const query = 'SELECT * FROM users';
+  const query = 'SELECT * FROM users WHERE username=$1';
   try {
-    const data = await db.query(query);
+    const data = await db.query(query, [username]);
     console.log(data.rows);
     return next;
   } catch (err) {
