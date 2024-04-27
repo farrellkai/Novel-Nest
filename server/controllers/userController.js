@@ -46,6 +46,7 @@ userController.allowEmail = async (req, res, next) => {
         status: 409,
         message: { err: 'email address already registered' },
       });
+    return next();
   } catch (err) {}
 };
 
