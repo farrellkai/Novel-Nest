@@ -47,7 +47,13 @@ userController.allowEmail = async (req, res, next) => {
         message: { err: 'email address already registered' },
       });
     return next();
-  } catch (err) {}
+  } catch (err) {
+    return next({
+      log: 'Error in userController.allowEmail middleware function',
+      status: 500,
+      message: { err: 'cannot retrieve email' },
+    });
+  }
 };
 
 //submit user's data to database
