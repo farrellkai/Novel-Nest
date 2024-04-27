@@ -38,6 +38,8 @@ userController.allowUser = async (req, res, next) => {
 userController.allowEmail = async (req, res, next) => {
   const { email } = req.body;
   const query = 'SELECT * FROM users WHERE email=$1';
+  try {
+  } catch (err) {}
 };
 
 //submit user's data to database
