@@ -10,7 +10,7 @@ userController.findUser = async (req, res, next) => {
   try {
     const data = await db.query(query, [username]);
     res.locals.user = data.rows[0];
-    return next;
+    return next();
   } catch (err) {
     return next({
       log: 'Error in userController.findUser middleware function',
