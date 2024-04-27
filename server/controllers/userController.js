@@ -20,7 +20,9 @@ userController.findUser = async (req, res, next) => {
 };
 
 //check if username/email is already taken
-userController.allowUser = async (req, res, next) => {};
+userController.allowUser = async (req, res, next) => {
+  const { username, email } = req.body;
+};
 
 //check if user's password matches inputted password
 userController.varifyUser = async (req, res, next) => {
