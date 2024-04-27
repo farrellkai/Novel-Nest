@@ -8,6 +8,9 @@ const Signup = () => {
     const conPassword = document.getElementById('conpassword').value;
 
     if (password !== conPassword) throw new Error('passwords do not match');
+
+    try {
+    } catch (err) {}
   };
 
   return (
