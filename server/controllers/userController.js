@@ -100,7 +100,7 @@ userController.varifyUser = async (req, res, next) => {
 userController.deleteUser = async (req, res, next) => {
   const { id } = req.params;
   console.log('id is:', id);
-  const query = 'DELETE FROM users WHERE user_id=$1';
+  const query = 'DELETE FROM users WHERE id=$1';
   try {
     await db.query(query, [id]);
     return next();
