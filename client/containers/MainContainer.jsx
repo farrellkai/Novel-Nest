@@ -48,7 +48,7 @@ const MainContainer = () => {
           <input type="text" name="username" id="username" />
           <p id="pass">Password</p>
           <input type="password" name="password" id="password" />
-          <div id="login btns">
+          <div id="loginBtns">
             <button
               className="loginButton"
               id="loginButton"
@@ -111,13 +111,24 @@ const MainContainer = () => {
           <input type="password" name="password" id="password" />
           <p id="conpass">Confirm Password</p>
           <input type="password" name="conpassword" id="conpassword" />
-          <button
-            className="registerButton"
-            id="registerButton"
-            onClick={registerUser}
-          >
-            Submit
-          </button>
+          <div id="registerBtns">
+            <button
+              className="registerButton"
+              id="registerButton"
+              onClick={registerUser}
+            >
+              Submit
+            </button>
+            <button
+              className="cancelButton"
+              id="cancelButton"
+              onClick={() => {
+                setHasAccount(true);
+              }}
+            >
+              Cancel
+            </button>
+          </div>
         </div>
       </div>
     );
