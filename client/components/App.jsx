@@ -1,4 +1,5 @@
 import React from 'react';
+import MainContainer from '../containers/MainContainer';
 import { Route, Routes } from 'react-router-dom';
 
 //import pages
@@ -11,11 +12,7 @@ import '../style.css';
 const App = () => {
   return (
     <div>
-      <Routes>
-        <Route path="/" element={<SplashPage />} />
-        <Route path="/login" element={<Login />} />
-        <Route path="/signup" element={<Signup />} />
-      </Routes>
+      <MainContainer />
     </div>
   );
 };
