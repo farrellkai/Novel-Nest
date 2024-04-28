@@ -1,8 +1,9 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Route, Routes } from 'react-router-dom';
 import Sidebar from '../components/Sidebar';
 
 const MainContainer = () => {
+  const [loggedIn, setLoggedIn] = useState(false);
   return (
     <div>
       <div className="sidebar">

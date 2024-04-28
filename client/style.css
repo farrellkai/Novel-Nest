@@ -1,6 +1,7 @@
 body {
-  background-image: url('./library-background-hgd4xlhw1tk49yyf.jpg');
-  background-size: contain;
+  background-image: url('./logo3.png');
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 #wrapper {
