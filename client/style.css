@@ -20,3 +20,11 @@ body {
   border: 2px solid black; /* Add border */
   padding: 20px; /* Add some padding for better appearance */
 }
+
+.sidebar {
+  background-color: aliceblue;
+  height: 100vh;
+  width: 15%;
+
+  display: flex;
+}

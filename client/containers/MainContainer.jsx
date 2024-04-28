@@ -8,11 +8,11 @@ const MainContainer = () => {
       <div className="sidebar">
         <Sidebar />
       </div>
-      <Routes>
+      {/* <Routes>
         <Route path="/" element={<SplashPage />} />
         <Route path="/login" element={<Login />} />
         <Route path="/signup" element={<Signup />} />
-      </Routes>
+      </Routes> */}
     </div>
   );
 };
