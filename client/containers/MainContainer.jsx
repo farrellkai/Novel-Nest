@@ -49,9 +49,24 @@ const MainContainer = () => {
           <input type="text" name="username" id="username" />
           <p id="pass">Password</p>
           <input type="password" name="password" id="password" />
-          <button className="loginButton" id="loginButton" onClick={verifyUser}>
-            Login
-          </button>
+          <div id="login btns">
+            <button
+              className="loginButton"
+              id="loginButton"
+              onClick={verifyUser}
+            >
+              Login
+            </button>
+            <button
+              className="accountButton"
+              id="accountButton"
+              onClick={() => {
+                setHasAccount(false);
+              }}
+            >
+              Create Account
+            </button>
+          </div>
         </div>
       </div>
     );
