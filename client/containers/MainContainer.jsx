@@ -4,6 +4,7 @@ import Sidebar from '../components/Sidebar';
 
 const MainContainer = () => {
   const [loggedIn, setLoggedIn] = useState(false);
+  const [hasAccount, setHasAccount] = useState(true);
   if (loggedIn) {
     return (
       <div>
