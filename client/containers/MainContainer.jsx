@@ -5,6 +5,9 @@ import Sidebar from '../components/Sidebar';
 const MainContainer = () => {
   return (
     <div>
+      <div>
+        <Sidebar />
+      </div>
       <Routes>
         <Route path="/" element={<SplashPage />} />
         <Route path="/login" element={<Login />} />
