@@ -1,4 +1,8 @@
-const App = () => {
+import React from 'react';
+import { Route, Routes } from 'react-router-dom';
+import Sidebar from '../components/Sidebar';
+
+const MainContainer = () => {
   return (
     <div>
       <Routes>
@@ -9,3 +13,5 @@ const App = () => {
     </div>
   );
 };
+
+export default MainContainer;
