@@ -6,7 +6,6 @@ const MainContainer = () => {
   const [loggedIn, setLoggedIn] = useState(false);
   const [hasAccount, setHasAccount] = useState(true);
 
-  const navigate = useNavigate();
   //logic to verify username and password are valid
   const verifyUser = async () => {
     const username = document.getElementById('username').value;
