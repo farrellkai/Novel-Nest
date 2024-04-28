@@ -5,7 +5,7 @@ import Sidebar from '../components/Sidebar';
 const MainContainer = () => {
   return (
     <div>
-      <div>
+      <div className="sidebar">
         <Sidebar />
       </div>
       <Routes>
