@@ -4,7 +4,7 @@ import '../style.css';
 const Dashboard = (props) => {
   const { loggedIn, user } = props;
   return (
-    <div>
+    <div id="dashboard">
       <h1>This is the dashboard</h1>
     </div>
   );
