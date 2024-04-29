@@ -4,6 +4,12 @@ body {
   background-size: cover;
 }
 
+#components {
+  display: flex;
+  justify-content: stretch;
+  align-items: stretch;
+}
+
 #wrapper {
   display: flex;
   justify-content: center;
@@ -28,4 +34,9 @@ body {
   width: 15%;
 
   display: flex;
+}
+
+.routes {
+  background-color: seagreen;
+  width: 100%;
 }
