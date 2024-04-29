@@ -37,6 +37,7 @@ const MainContainer = () => {
 
         if (!response.ok) throw new Error('Incorrect username or password');
         else if (response.ok) {
+          setUser(username);
           setLoggedIn(true);
         }
       } catch (err) {
@@ -95,7 +96,7 @@ const MainContainer = () => {
 
         if (!response.ok) throw new Error('something went wrong');
         else if (response.ok) {
-          console.log('WE GOOD!!!');
+          setUser(username);
           setLoggedIn(true);
         }
       } catch (err) {
