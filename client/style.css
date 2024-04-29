@@ -36,6 +36,13 @@ body {
   display: flex;
 }
 
+#links {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+}
+
 .routes {
   background-color: seagreen;
   width: 100%;
