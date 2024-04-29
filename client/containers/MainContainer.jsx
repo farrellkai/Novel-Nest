@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Route, Routes } from 'react-router-dom';
 import Sidebar from '../components/Sidebar';
+import Dashboard from '../pages/Dashboard';
 
 const MainContainer = () => {
   const [loggedIn, setLoggedIn] = useState(false);
@@ -8,15 +9,15 @@ const MainContainer = () => {
 
   if (loggedIn) {
     return (
-      <div>
+      <div id="components">
         <div className="sidebar">
           <Sidebar />
         </div>
-        {/* <Routes>
-          <Route path="/" element={<SplashPage />} />
-          <Route path="/login" element={<Login />} />
-          <Route path="/signup" element={<Signup />} />
-        </Routes> */}
+        <div className="routes">
+          <Routes>
+            <Route path="/" element={<Dashboard loggedIn={loggedIn} />} />
+          </Routes>
+        </div>
       </div>
     );
   } else if (!loggedIn && hasAccount) {
