@@ -3,6 +3,7 @@ import { Route, Routes } from 'react-router-dom';
 import Sidebar from '../components/Sidebar';
 import BooksPage from '../pages/BooksPage';
 import Dashboard from '../pages/Dashboard';
+import ClubsPage from '../pages/ClubsPage';
 
 const MainContainer = () => {
   const [loggedIn, setLoggedIn] = useState(false);
@@ -24,6 +25,10 @@ const MainContainer = () => {
             <Route
               path="/books"
               element={<BooksPage loggedIn={loggedIn} user={user} />}
+            />
+            <Route
+              path="/clubs"
+              element={<ClubsPage loggedIn={loggedIn} user={user} />}
             />
           </Routes>
         </div>
