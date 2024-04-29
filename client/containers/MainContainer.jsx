@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Route, Routes } from 'react-router-dom';
 import Sidebar from '../components/Sidebar';
+import BooksPage from '../pages/BooksPage';
 import Dashboard from '../pages/Dashboard';
 
 const MainContainer = () => {
@@ -19,6 +20,10 @@ const MainContainer = () => {
             <Route
               path="/"
               element={<Dashboard loggedIn={loggedIn} user={user} />}
+            />
+            <Route
+              path="/books"
+              element={<BooksPage loggedIn={loggedIn} user={user} />}
             />
           </Routes>
         </div>
