@@ -16,7 +16,10 @@ const MainContainer = () => {
         </div>
         <div className="routes">
           <Routes>
-            <Route path="/" element={<Dashboard loggedIn={loggedIn} />} />
+            <Route
+              path="/"
+              element={<Dashboard loggedIn={loggedIn} user={user} />}
+            />
           </Routes>
         </div>
       </div>
