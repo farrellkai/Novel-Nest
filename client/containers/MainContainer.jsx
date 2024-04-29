@@ -10,6 +10,14 @@ const MainContainer = () => {
   const [user, setUser] = useState(null);
   const [hasAccount, setHasAccount] = useState(true);
 
+  const getElements = () => {
+    const username = document.getElementById('username').value;
+    //const email = document.getElementById('email').value;
+    const password = document.getElementById('password').value;
+    //const conPassword = document.getElementById('conpassword').value;
+    return [username, password];
+  };
+
   if (loggedIn) {
     return (
       <div id="components">
@@ -37,15 +45,18 @@ const MainContainer = () => {
   } else if (!loggedIn && hasAccount) {
     //logic to verify username and password are valid
     const verifyUser = async () => {
-      const username = document.getElementById('username').value;
-      const password = document.getElementById('password').value;
+      // const username = document.getElementById('username').value;
+      // const password = document.getElementById('password').value;
       try {
         const response = await fetch('api/user/login', {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json',
           },
-          body: JSON.stringify({ username: username, password: password }),
+          body: JSON.stringify({
+            username: getElements()[0],
+            password: getElements()[1],
+          }),
         });
 
         if (!response.ok) throw new Error('Incorrect username or password');
@@ -87,10 +98,10 @@ const MainContainer = () => {
     );
   } else if (!loggedIn && !hasAccount) {
     const registerUser = async () => {
-      const username = document.getElementById('username').value;
-      const email = document.getElementById('email').value;
-      const password = document.getElementById('password').value;
-      const conPassword = document.getElementById('conpassword').value;
+      // const username = document.getElementById('username').value;
+      // const email = document.getElementById('email').value;
+      // const password = document.getElementById('password').value;
+      // const conPassword = document.getElementById('conpassword').value;
 
       if (password !== conPassword) throw new Error('passwords do not match');
 
