@@ -5,6 +5,7 @@ import Dashboard from '../pages/Dashboard';
 
 const MainContainer = () => {
   const [loggedIn, setLoggedIn] = useState(false);
+  const [user, setUser] = useState(null);
   const [hasAccount, setHasAccount] = useState(true);
 
   if (loggedIn) {
