@@ -9,6 +9,8 @@ const externalController = {};
 externalController.getTitle = async () => {
   //destructure title from req.params
   const { title } = req.params;
+  try {
+  } catch (err) {}
 };
 
 module.exports = externalController;
