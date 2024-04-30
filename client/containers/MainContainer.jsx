@@ -98,6 +98,8 @@ const MainContainer = () => {
       </div>
     );
   } else if (!loggedIn && !hasAccount) {
+    const allowPW = () => {};
+
     const registerUser = async () => {
       if (getElements()[2] !== getElements()[3])
         throw new Error('passwords do not match');
