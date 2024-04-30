@@ -15,6 +15,8 @@ externalController.getTitle = async (req, res, next) => {
     );
     const data = await response.json();
     console.log(data);
+    res.locals.results = data.totalItems;
+    res.locals.items = data.items;
   } catch (err) {}
 };
 
