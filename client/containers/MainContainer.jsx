@@ -98,7 +98,9 @@ const MainContainer = () => {
       </div>
     );
   } else if (!loggedIn && !hasAccount) {
-    const allowPW = () => {};
+    const allowPW = () => {
+      if (getElements()[2].length < 5) console.log('TOO SHORT');
+    };
 
     const registerUser = async () => {
       if (getElements()[2] !== getElements()[3])
