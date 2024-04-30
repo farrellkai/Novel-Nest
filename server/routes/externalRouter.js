@@ -3,8 +3,6 @@ const externalController = require('../controllers/externalController');
 
 const externalRouter = express.Router();
 
-externalRouter.get('/:title', externalController.getTitle, (req, res) => {});
-
-externalRouter.get('/:author', (req, res) => {});
+externalRouter.get('/:query', externalController.getTitle, (req, res) => {});
 
 module.exports = externalRouter;
