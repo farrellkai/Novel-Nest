@@ -1,5 +1,4 @@
 const db = require('../models/entryModel');
-const { use } = require('../routes/userRouter');
 
 const userController = {};
 

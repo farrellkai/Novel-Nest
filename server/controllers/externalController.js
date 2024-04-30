@@ -6,7 +6,7 @@ const API_KEY = process.env.API_KEY;
 const externalController = {};
 
 //retrieve book data by title
-externalController.getTitle = async () => {
+externalController.getTitle = async (req, res, next) => {
   //destructure title from req.params
   const { title } = req.params;
   try {
