@@ -136,7 +136,12 @@ const MainContainer = () => {
           <p id="mail">Email</p>
           <input type="text" name="email" id="email" />
           <p id="pass">Password</p>
-          <input type="password" name="password" id="password" />
+          <input
+            type="password"
+            name="password"
+            id="password"
+            onKeyUp={() => allowPW()}
+          />
           <p id="conpass">Confirm Password</p>
           <input type="password" name="conpassword" id="conpassword" />
           <div id="registerBtns">
