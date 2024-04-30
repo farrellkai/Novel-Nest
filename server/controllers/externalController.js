@@ -18,7 +18,13 @@ externalController.getTitle = async (req, res, next) => {
     res.locals.results = data.totalItems;
     res.locals.items = data.items;
     return next();
-  } catch (err) {}
+  } catch (err) {
+    return next({
+      log: 'Error in externalController.getTitle middleware function',
+      status: 500,
+      message: { err: 'cannot fetch data' },
+    });
+  }
 };
 
 module.exports = externalController;
