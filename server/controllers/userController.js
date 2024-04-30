@@ -97,8 +97,9 @@ userController.varifyUser = async (req, res, next) => {
   try {
     //compare password to hashed passowrd in db
     const compare = await bcrypt.compare(password, res.locals.user.password);
+    //if results do not match throw error
+    if (!compare) return next(error);
   } catch (err) {}
-  if (password !== res.locals.user.password) return next(error);
   return next();
 };
 
