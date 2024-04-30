@@ -12,9 +12,12 @@ const MainContainer = () => {
 
   const getElements = () => {
     const username = document.getElementById('username').value;
-    //const email = document.getElementById('email').value;
     const password = document.getElementById('password').value;
-    //const conPassword = document.getElementById('conpassword').value;
+    if (document.getElementById('email')) {
+      const email = document.getElementById('email').value;
+      const conPassword = document.getElementById('conpassword').value;
+      return [username, email, password, conPassword];
+    }
     return [username, password];
   };
 
