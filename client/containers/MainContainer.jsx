@@ -102,6 +102,10 @@ const MainContainer = () => {
       if (getElements()[2].length < 5) console.log('TOO SHORT');
     };
 
+    const matchPW = () => {
+      if (getElements()[2] !== getElements()[3]) console.log('DO NOT MATCH');
+    };
+
     const registerUser = async () => {
       if (getElements()[2] !== getElements()[3])
         throw new Error('passwords do not match');
