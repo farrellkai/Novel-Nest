@@ -147,7 +147,12 @@ const MainContainer = () => {
             onKeyUp={() => allowPW()}
           />
           <p id="conpass">Confirm Password</p>
-          <input type="password" name="conpassword" id="conpassword" />
+          <input
+            type="password"
+            name="conpassword"
+            id="conpassword"
+            onKeyUp={() => matchPW()}
+          />
           <div id="registerBtns">
             <button
               className="registerButton"
