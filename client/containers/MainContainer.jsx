@@ -62,7 +62,7 @@ const MainContainer = () => {
 
         if (!response.ok) throw new Error('Incorrect username or password');
         else if (response.ok) {
-          setUser(username);
+          setUser(getElements()[0]);
           setLoggedIn(true);
         }
       } catch (err) {
@@ -117,7 +117,7 @@ const MainContainer = () => {
 
         if (!response.ok) throw new Error('something went wrong');
         else if (response.ok) {
-          setUser(username);
+          setUser(getElements()[0]);
           setLoggedIn(true);
         }
       } catch (err) {
