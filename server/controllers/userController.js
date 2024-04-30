@@ -1,4 +1,5 @@
 const db = require('../models/entryModel');
+import bcrypt from 'bcrypt';
 
 const userController = {};
 
