@@ -3,7 +3,7 @@ const externalController = require('../controllers/externalController');
 
 const externalRouter = express.Router();
 
-externalRouter.get('/:title', (req, res) => {});
+externalRouter.get('/:title', externalController.getTitle, (req, res) => {});
 
 externalRouter.get('/:author', (req, res) => {});
 
