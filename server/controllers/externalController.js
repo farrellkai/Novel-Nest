@@ -10,6 +10,9 @@ externalController.getTitle = async () => {
   //destructure title from req.params
   const { title } = req.params;
   try {
+    const response = await fetch(
+      `https://www.googleapis.com/books/v1/volumes?q=${title}&key=${API_KEY}`
+    );
   } catch (err) {}
 };
 
