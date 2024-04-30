@@ -48,8 +48,6 @@ const MainContainer = () => {
   } else if (!loggedIn && hasAccount) {
     //logic to verify username and password are valid
     const verifyUser = async () => {
-      // const username = document.getElementById('username').value;
-      // const password = document.getElementById('password').value;
       try {
         const response = await fetch('api/user/login', {
           method: 'POST',
@@ -101,12 +99,8 @@ const MainContainer = () => {
     );
   } else if (!loggedIn && !hasAccount) {
     const registerUser = async () => {
-      // const username = document.getElementById('username').value;
-      // const email = document.getElementById('email').value;
-      // const password = document.getElementById('password').value;
-      // const conPassword = document.getElementById('conpassword').value;
-
-      if (password !== conPassword) throw new Error('passwords do not match');
+      if (getElements()[2] !== getElements()[3])
+        throw new Error('passwords do not match');
 
       try {
         const response = await fetch('/api/user/signup', {
@@ -115,9 +109,9 @@ const MainContainer = () => {
             'Content-Type': 'application/json',
           },
           body: JSON.stringify({
-            username: username,
-            email: email,
-            password: password,
+            username: getElements()[0],
+            email: getElements()[1],
+            password: getElements()[2],
           }),
         });
 
