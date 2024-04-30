@@ -66,6 +66,8 @@ userController.allowEmail = async (req, res, next) => {
 userController.createUser = async (req, res, next) => {
   //pull username, email, and password from req.body
   const { username, email, password } = req.body;
+  //hash the password
+  const hash = await bcrypt.hash(password, 10);
   //create new row in users table with username, email, and password passed in as values
   const query =
     'INSERT INTO users (username, email, password) VALUES ($1, $2, $3)';
