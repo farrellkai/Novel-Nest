@@ -100,8 +100,13 @@ userController.varifyUser = async (req, res, next) => {
     //if results do not match throw error
     if (!compare) return next(error);
     else return next();
-  } catch (err) {}
-  return next();
+  } catch (err) {
+    return next({
+      log: 'Error in userController.varifyUser middleware function',
+      status: 500,
+      message: { err: 'cannot confirm username/password' },
+    });
+  }
 };
 
 //remove user from db
