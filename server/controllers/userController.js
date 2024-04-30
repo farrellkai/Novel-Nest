@@ -1,5 +1,5 @@
 const db = require('../models/entryModel');
-import bcrypt from 'bcrypt';
+const bcrypt = require('bcrypt');
 
 const userController = {};
 
@@ -94,6 +94,8 @@ userController.varifyUser = async (req, res, next) => {
   };
   if (!res.locals.user) return next(error);
   const { password } = req.body;
+  try {
+  } catch (err) {}
   if (password !== res.locals.user.password) return next(error);
   return next();
 };
