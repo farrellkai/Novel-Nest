@@ -17,7 +17,7 @@ const Searchbar = () => {
           search();
         }}
       />
-      <div>{searching ? <h1>Searching</h1> : null}</div>
+      {searching ? <h1>Searching</h1> : null}
     </div>
   );
 };
