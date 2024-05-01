@@ -5,6 +5,7 @@ const Searchbar = () => {
 
   const search = () => {
     console.log('searching');
+    setSearching(true);
   };
 
   return (
@@ -16,6 +17,7 @@ const Searchbar = () => {
           search();
         }}
       />
+      <div>{searching ? <h1>Searching</h1> : null}</div>
     </div>
   );
 };
