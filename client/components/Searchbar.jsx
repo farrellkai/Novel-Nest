@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import ResultBox from './ResultBox';
 
 const Searchbar = () => {
   const [searching, setSearching] = useState(false);
@@ -29,7 +30,14 @@ const Searchbar = () => {
           search();
         }}
       />
-      {searching ? <h1>{results} results</h1> : null}
+      {searching ? (
+        <>
+          <h1>{results} results</h1>
+          <ResultBox book={items[0]} />
+          <ResultBox book={items[1]} />
+          <ResultBox book={items[2]} />
+        </>
+      ) : null}
     </div>
   );
 };
