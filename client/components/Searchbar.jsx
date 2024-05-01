@@ -15,7 +15,9 @@ const Searchbar = () => {
         setResults(data.results);
         setSearching(true);
       }
-    } catch {}
+    } catch (err) {
+      console.log('Error:', err);
+    }
   };
 
   return (
