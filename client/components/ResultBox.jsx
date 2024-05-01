@@ -1,9 +1,11 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 
 const ResultBox = (props) => {
-  // cover = props.book.volumeInfo.imageLinks.smallThumbnail;
-
-  console.log('THESE ARE MY PROPS:', props.book.volumeInfo.imageLinks);
+  return (
+    <div>
+      <p>{props.book.volumeInfo.title}</p>
+    </div>
+  );
 };
 
 export default ResultBox;
