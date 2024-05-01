@@ -33,7 +33,7 @@ const Searchbar = () => {
       />
       {searching ? (
         <>
-          <div className="resultsModal">
+          <div className="results">
             {results} results
             <ResultBox book={items[0]} />
             <ResultBox book={items[1]} />

@@ -32,20 +32,22 @@ const MainContainer = () => {
           <div id="search">
             <Searchbar />
           </div>
-          <Routes>
-            <Route
-              path="/"
-              element={<Dashboard loggedIn={loggedIn} user={user} />}
-            />
-            <Route
-              path="/books"
-              element={<BooksPage loggedIn={loggedIn} user={user} />}
-            />
-            <Route
-              path="/clubs"
-              element={<ClubsPage loggedIn={loggedIn} user={user} />}
-            />
-          </Routes>
+          <div className="pages">
+            <Routes>
+              <Route
+                path="/"
+                element={<Dashboard loggedIn={loggedIn} user={user} />}
+              />
+              <Route
+                path="/books"
+                element={<BooksPage loggedIn={loggedIn} user={user} />}
+              />
+              <Route
+                path="/clubs"
+                element={<ClubsPage loggedIn={loggedIn} user={user} />}
+              />
+            </Routes>
+          </div>
         </div>
       </div>
     );

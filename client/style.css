@@ -38,6 +38,11 @@ body {
 
 #search {
   display: inline-block;
+  position: relative;
+}
+
+.pages {
+  /* position: absolute; */
 }
 
 #links {
@@ -47,7 +52,8 @@ body {
   justify-content: space-around;
 }
 
-.resultsModal {
+.results {
+  position: fixed;
   display: flex;
   flex-direction: column;
 }
