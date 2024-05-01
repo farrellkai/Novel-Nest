@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 
 const Searchbar = () => {
   const [searching, setSearching] = useState(false);
+  const [results, setResults] = useState(0);
 
   const search = async () => {
     const query = document.getElementById('searchbar').value;
@@ -10,10 +11,11 @@ const Searchbar = () => {
       const response = await fetch(`/api/external/${query}`);
       if (response.ok) {
         const data = await response.json();
+        console.log(data);
+        setResults(data.results);
+        setSearching(true);
       }
-      console.log(data);
     } catch {}
-    setSearching(true);
   };
 
   return (
@@ -25,7 +27,7 @@ const Searchbar = () => {
           search();
         }}
       />
-      {searching ? <h1>Searching</h1> : null}
+      {searching ? <h1>{results} results</h1> : null}
     </div>
   );
 };
