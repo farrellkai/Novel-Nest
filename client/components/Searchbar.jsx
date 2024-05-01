@@ -4,16 +4,16 @@ import ResultBox from './ResultBox';
 const Searchbar = () => {
   const [searching, setSearching] = useState(false);
   const [results, setResults] = useState(0);
+  const [items, setItems] = useState([]);
 
   const search = async () => {
     const query = document.getElementById('searchbar').value;
-    console.log(query);
     try {
       const response = await fetch(`/api/external/${query}`);
       if (response.ok) {
         const data = await response.json();
-        console.log(data);
         setResults(data.results);
+        setItems(data.items);
         setSearching(true);
       }
     } catch (err) {

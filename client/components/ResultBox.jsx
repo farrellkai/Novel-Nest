@@ -1,5 +1,7 @@
 import React from 'react';
 
-const ResultBox = (props) => {};
+const ResultBox = (props) => {
+  console.log('THESE ARE MY PROPS:', props);
+};
 
 export default ResultBox;
