@@ -5,9 +5,9 @@ const userController = {};
 
 //find if username exists in db
 userController.findUser = async (req, res, next) => {
+  console.log('***findUser middleware running***');
   //pull username from req.body
   const { username } = req.body;
-
   //find row with matching username in db
   const query = 'SELECT * FROM users WHERE username=$1';
   try {
@@ -26,6 +26,7 @@ userController.findUser = async (req, res, next) => {
 
 //check if username is already taken
 userController.allowUser = async (req, res, next) => {
+  console.log('***allowUser middleware running***');
   //if data passed on res.locals object is not undefined throw error
   if (res.locals.user) {
     return next({
@@ -39,6 +40,7 @@ userController.allowUser = async (req, res, next) => {
 
 //check if email is already taken
 userController.allowEmail = async (req, res, next) => {
+  console.log('***findEmail middleware running***');
   //pull email from req.body
   const { email } = req.body;
   //find row with matching email address in db
@@ -64,6 +66,7 @@ userController.allowEmail = async (req, res, next) => {
 
 //submit user's data to database
 userController.createUser = async (req, res, next) => {
+  console.log('***createUser middleware running***');
   //pull username, email, and password from req.body
   const { username, email, password } = req.body;
   //hash the password
@@ -86,6 +89,7 @@ userController.createUser = async (req, res, next) => {
 
 //check if user's password matches inputted password
 userController.varifyUser = async (req, res, next) => {
+  console.log('***varifyUser middleware running***');
   //error to be thrown if username does not exist or password does not match username
   const error = {
     log: 'Error in userController.varifyUser middleware function',
@@ -111,6 +115,7 @@ userController.varifyUser = async (req, res, next) => {
 
 //remove user from db
 userController.deleteUser = async (req, res, next) => {
+  console.log('***deleteUser middleware running***');
   const { id } = req.params;
   console.log('id is:', id);
   const query = 'DELETE FROM users WHERE id=$1';
