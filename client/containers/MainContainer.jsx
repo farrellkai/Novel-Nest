@@ -28,26 +28,24 @@ const MainContainer = () => {
         <div className="sidebar">
           <Sidebar />
         </div>
-        <div id="rightside">
+        <div className="routes">
           <div id="search">
             <Searchbar />
           </div>
-          <div className="routes">
-            <Routes>
-              <Route
-                path="/"
-                element={<Dashboard loggedIn={loggedIn} user={user} />}
-              />
-              <Route
-                path="/books"
-                element={<BooksPage loggedIn={loggedIn} user={user} />}
-              />
-              <Route
-                path="/clubs"
-                element={<ClubsPage loggedIn={loggedIn} user={user} />}
-              />
-            </Routes>
-          </div>
+          <Routes>
+            <Route
+              path="/"
+              element={<Dashboard loggedIn={loggedIn} user={user} />}
+            />
+            <Route
+              path="/books"
+              element={<BooksPage loggedIn={loggedIn} user={user} />}
+            />
+            <Route
+              path="/clubs"
+              element={<ClubsPage loggedIn={loggedIn} user={user} />}
+            />
+          </Routes>
         </div>
       </div>
     );

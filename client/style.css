@@ -36,6 +36,10 @@ body {
   display: flex;
 }
 
+#search {
+  display: inline-block;
+}
+
 #links {
   display: flex;
   flex-direction: column;
@@ -46,4 +50,8 @@ body {
 .routes {
   background-color: seagreen;
   width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
 }
