@@ -77,7 +77,12 @@ const MainContainer = () => {
       <div id="wrapper">
         <div id="login">
           <p id="user">Username</p>
-          <input type="text" name="username" id="username" />
+          <input
+            type="text"
+            name="username"
+            id="username"
+            placeholder="username"
+          />
           <p id="pass">Password</p>
           <input type="password" name="password" id="password" />
           <div id="loginBtns">

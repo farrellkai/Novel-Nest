@@ -26,6 +26,7 @@ const Searchbar = () => {
       <input
         id="searchbar"
         type="text"
+        placeholder="Search by title or author"
         onKeyUp={() => {
           search();
         }}
