@@ -47,6 +47,11 @@ body {
   justify-content: space-around;
 }
 
+.resultsModal {
+  display: flex;
+  flex-direction: column;
+}
+
 .routes {
   background-color: seagreen;
   width: 100%;
