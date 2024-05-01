@@ -4,6 +4,7 @@ import Sidebar from '../components/Sidebar';
 import BooksPage from '../pages/BooksPage';
 import Dashboard from '../pages/Dashboard';
 import ClubsPage from '../pages/ClubsPage';
+import Searchbar from '../components/Searchbar';
 
 const MainContainer = () => {
   const [loggedIn, setLoggedIn] = useState(false);
@@ -27,21 +28,26 @@ const MainContainer = () => {
         <div className="sidebar">
           <Sidebar />
         </div>
-        <div className="routes">
-          <Routes>
-            <Route
-              path="/"
-              element={<Dashboard loggedIn={loggedIn} user={user} />}
-            />
-            <Route
-              path="/books"
-              element={<BooksPage loggedIn={loggedIn} user={user} />}
-            />
-            <Route
-              path="/clubs"
-              element={<ClubsPage loggedIn={loggedIn} user={user} />}
-            />
-          </Routes>
+        <div id="rightside">
+          <div id="search">
+            <Searchbar />
+          </div>
+          <div className="routes">
+            <Routes>
+              <Route
+                path="/"
+                element={<Dashboard loggedIn={loggedIn} user={user} />}
+              />
+              <Route
+                path="/books"
+                element={<BooksPage loggedIn={loggedIn} user={user} />}
+              />
+              <Route
+                path="/clubs"
+                element={<ClubsPage loggedIn={loggedIn} user={user} />}
+              />
+            </Routes>
+          </div>
         </div>
       </div>
     );
