@@ -4,7 +4,8 @@ const Searchbar = () => {
   const [searching, setSearching] = useState(false);
 
   const search = () => {
-    console.log('searching');
+    const query = document.getElementById('searchbar').innerText;
+    console.log(query);
     setSearching(true);
   };
 
