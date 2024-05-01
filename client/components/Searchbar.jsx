@@ -3,9 +3,11 @@ import React, { useState } from 'react';
 const Searchbar = () => {
   const [searching, setSearching] = useState(false);
 
-  const search = () => {
+  const search = async () => {
     const query = document.getElementById('searchbar').innerText;
     console.log(query);
+    try {
+    } catch {}
     setSearching(true);
   };
 
