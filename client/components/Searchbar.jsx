@@ -4,9 +4,14 @@ const Searchbar = () => {
   const [searching, setSearching] = useState(false);
 
   const search = async () => {
-    const query = document.getElementById('searchbar').innerText;
+    const query = document.getElementById('searchbar').value;
     console.log(query);
     try {
+      const response = await fetch(`/api/external/${query}`);
+      if (response.ok) {
+        const data = await response.json();
+      }
+      console.log(data);
     } catch {}
     setSearching(true);
   };
@@ -16,7 +21,7 @@ const Searchbar = () => {
       <input
         id="searchbar"
         type="text"
-        onKeyDown={() => {
+        onKeyUp={() => {
           search();
         }}
       />
