@@ -1,7 +1,9 @@
 import React, { useState } from 'react';
 import ResultBox from './ResultBox';
 
-const Searchbar = ({ getSearchData }) => {
+const Searchbar = (props) => {
+  const { getSearchData } = props;
+
   const [searching, setSearching] = useState(false);
   const [results, setResults] = useState(0);
   const [items, setItems] = useState([]);
@@ -39,9 +41,9 @@ const Searchbar = ({ getSearchData }) => {
         <>
           <div className="results">
             {results} results
-            <ResultBox book={items[0]} />
-            <ResultBox book={items[1]} />
-            <ResultBox book={items[2]} />
+            <ResultBox getSearchData={getSearchData} book={items[0]} />
+            <ResultBox getSearchData={getSearchData} book={items[1]} />
+            <ResultBox getSearchData={getSearchData} book={items[2]} />
           </div>
         </>
       )}
