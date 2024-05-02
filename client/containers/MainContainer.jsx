@@ -5,6 +5,7 @@ import BooksPage from '../pages/BooksPage';
 import Dashboard from '../pages/Dashboard';
 import ClubsPage from '../pages/ClubsPage';
 import Searchbar from '../components/Searchbar';
+import SearchPage from '../pages/SearchPage';
 
 const MainContainer = () => {
   const [loggedIn, setLoggedIn] = useState(false);
