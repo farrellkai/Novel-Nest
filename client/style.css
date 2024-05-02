@@ -53,6 +53,7 @@ body {
 }
 
 .results {
+  background-color: antiquewhite;
   position: fixed;
   display: flex;
   flex-direction: column;
