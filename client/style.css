@@ -71,3 +71,28 @@ body {
   justify-content: flex-start;
   align-items: center;
 }
+
+.overlay {
+  background-color: rgba(0, 0, 0, 0.1);
+  position: fixed;
+  height: 100%;
+  width: 100%;
+}
+
+.modalContainer {
+  max-width: 600px;
+  width: 100%;
+  position: fixed;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  background-color: #ffff;
+  box-shadow: 0px, 0px, 18px, 0px rgba(0, 0, 0, 0.75);
+}
+
+.closeBtn {
+  position: fixed;
+  top: 8px;
+  left: 8px;
+}

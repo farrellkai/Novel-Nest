@@ -6,9 +6,9 @@ const Searchbar = () => {
   const [results, setResults] = useState(0);
   const [items, setItems] = useState([]);
 
-  document.addEventListener('click', () => {
-    setSearching(false);
-  });
+  // document.addEventListener('click', () => {
+  //   setSearching(false);
+  // });
 
   const search = async () => {
     const query = document.getElementById('searchbar').value;

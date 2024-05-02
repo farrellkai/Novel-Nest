@@ -1,13 +1,15 @@
 import React, { useEffect, useState } from 'react';
+import SearchModal from './modals/SearchModal';
 
 const ResultBox = (props) => {
   const [searchModal, setSearchModal] = useState(false);
   const { book } = props;
   console.log(book.volumeInfo);
   return (
-    <div className="resultBox">
+    <div className="resultBox" onClick={() => setSearchModal(true)}>
       <p>{book.volumeInfo.title}</p>
       <p>{book.volumeInfo.authors}</p>
+      {searchModal && <SearchModal />}
     </div>
   );
 };
