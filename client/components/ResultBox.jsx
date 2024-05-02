@@ -1,6 +1,7 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 
 const ResultBox = (props) => {
+  const [searchModal, setSearchModal] = useState(false);
   const { book } = props;
   console.log(book.volumeInfo);
   return (
