@@ -46,6 +46,10 @@ const MainContainer = () => {
                 path="/clubs"
                 element={<ClubsPage loggedIn={loggedIn} user={user} />}
               />
+              <Route
+                path="/search"
+                element={<SearchPage loggedIn={loggedIn} user={user} />}
+              />
             </Routes>
           </div>
         </div>
