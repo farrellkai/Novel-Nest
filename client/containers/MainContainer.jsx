@@ -53,7 +53,7 @@ const MainContainer = () => {
               />
               <Route
                 path="/search"
-                element={<SearchPage loggedIn={loggedIn} user={user} />}
+                element={<SearchPage searchData={searchData} />}
               />
             </Routes>
           </div>
