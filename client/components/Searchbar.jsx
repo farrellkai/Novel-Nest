@@ -35,7 +35,7 @@ const Searchbar = () => {
           search();
         }}
       />
-      {searching && results ? (
+      {searching && results && (
         <>
           <div className="results">
             {results} results
@@ -44,7 +44,7 @@ const Searchbar = () => {
             <ResultBox book={items[2]} />
           </div>
         </>
-      ) : null}
+      )}
     </div>
   );
 };
