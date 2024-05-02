@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import ResultBox from './ResultBox';
 
-const Searchbar = () => {
+const Searchbar = ({ getSearchData }) => {
   const [searching, setSearching] = useState(false);
   const [results, setResults] = useState(0);
   const [items, setItems] = useState([]);
