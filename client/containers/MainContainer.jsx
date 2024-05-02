@@ -10,6 +10,11 @@ const MainContainer = () => {
   const [loggedIn, setLoggedIn] = useState(false);
   const [user, setUser] = useState(null);
   const [hasAccount, setHasAccount] = useState(true);
+  const [searchData, setSearchData] = useState({});
+
+  const getSearchData = (obj) => {
+    setSearchData(obj);
+  };
 
   const getElements = () => {
     const username = document.getElementById('username').value;
