@@ -35,7 +35,7 @@ const MainContainer = () => {
         </div>
         <div className="routes">
           <div id="search">
-            <Searchbar />
+            <Searchbar getSearchData={getSearchData} />
           </div>
           <div className="pages">
             <Routes>
