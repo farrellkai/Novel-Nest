@@ -59,6 +59,10 @@ body {
   flex-direction: column;
 }
 
+.resultBox {
+  border: 1px solid black;
+}
+
 .routes {
   background-color: seagreen;
   width: 100%;

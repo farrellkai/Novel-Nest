@@ -6,6 +6,10 @@ const Searchbar = () => {
   const [results, setResults] = useState(0);
   const [items, setItems] = useState([]);
 
+  const handleSearching = () => {
+    setSearching(false);
+  };
+
   const search = async () => {
     const query = document.getElementById('searchbar').value;
     try {
@@ -26,7 +30,7 @@ const Searchbar = () => {
       <input
         id="searchbar"
         type="text"
-        placeholder="Search by title or author"
+        placeholder="Search for books by title"
         onKeyUp={() => {
           search();
         }}
@@ -35,9 +39,9 @@ const Searchbar = () => {
         <>
           <div className="results">
             {results} results
-            <ResultBox book={items[0]} />
-            <ResultBox book={items[1]} />
-            <ResultBox book={items[2]} />
+            <ResultBox stateHandler={handleSearching} book={items[0]} />
+            <ResultBox stateHandler={handleSearching} book={items[1]} />
+            <ResultBox stateHandler={handleSearching} book={items[2]} />
           </div>
         </>
       ) : null}
