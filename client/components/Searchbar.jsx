@@ -6,8 +6,7 @@ const Searchbar = () => {
   const [results, setResults] = useState(0);
   const [items, setItems] = useState([]);
 
-  document.addEventListener('click', (event) => {
-    console.log('YOU CLICKED SOMEWHERE');
+  document.addEventListener('click', () => {
     setSearching(false);
   });
 
