@@ -2,11 +2,11 @@ import React, { useEffect } from 'react';
 
 const ResultBox = (props) => {
   const { book } = props;
-  console.log(props);
+  console.log(book.volumeInfo);
   return (
     <div>
-      <p>{props.book.volumeInfo.title}</p>
-      <p>{props.book.volumeInfo.title}</p>
+      <p>{book.volumeInfo.title}</p>
+      <p>{book.volumeInfo.authors}</p>
     </div>
   );
 };
