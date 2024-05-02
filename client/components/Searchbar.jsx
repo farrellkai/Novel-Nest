@@ -35,7 +35,7 @@ const Searchbar = () => {
           search();
         }}
       />
-      {searching ? (
+      {searching && results ? (
         <>
           <div className="results">
             {results} results
