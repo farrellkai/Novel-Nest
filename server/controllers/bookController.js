@@ -25,6 +25,8 @@ bookController.addBook = async (req, res, next) => {
   if (res.locals.bookID) return next();
 
   const { googleID, title, author } = req.body;
+  const query =
+    'INSERT INTO books (google_id, title, author) VALUES ($1, $2, $3)';
 };
 
 module.exports = bookController;
