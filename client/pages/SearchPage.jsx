@@ -1,9 +1,10 @@
 import React, { useState } from 'react';
 
-const SearchPage = (props) => {
-  console.log('THESE ARE THE PROPS:', props);
-  const { id, volumeInfo } = props;
-  const { title, authors } = volumeInfo;
+const SearchPage = ({ searchData }) => {
+  const { id, volumeInfo } = searchData;
+  console.log(searchData);
+  //const { title, authors } = volumeInfo;
+  //console.log(id, title, authors);
   return (
     <div className="dropdown">
       <button className="dropbtn">Dropdown</button>
