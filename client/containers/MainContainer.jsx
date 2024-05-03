@@ -78,6 +78,8 @@ const MainContainer = () => {
 
         if (!response.ok) throw new Error('Incorrect username or password');
         else if (response.ok) {
+          try {
+          } catch (err) {}
           setUser(getElements()[0]);
           setLoggedIn(true);
         }
