@@ -58,6 +58,12 @@ bookController.findUserBook = async (req, res, next) => {
   const query = 'SELECT * FROM user_books WHERE user_id=$1 AND book_id=$2';
   try {
     const data = await db.query(query, [userID, _id]);
+    if (data.rows[0])
+      return next({
+        log: 'Error in bookController.findUserBook middleware function',
+        status: 409,
+        message: { err: 'userBook already exists' },
+      });
   } catch (err) {}
 };
 
