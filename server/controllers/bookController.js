@@ -64,6 +64,7 @@ bookController.findUserBook = async (req, res, next) => {
         status: 409,
         message: { err: 'userBook already exists' },
       });
+    else return next();
   } catch (err) {}
 };
 
