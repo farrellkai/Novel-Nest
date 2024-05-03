@@ -82,6 +82,8 @@ const MainContainer = () => {
             const userDataResponse = await fetch(
               `api/user/${getElements()[0]}`
             );
+            if (!userDataResponse.ok)
+              throw new Error('Failed to fetch user data');
           } catch (err) {}
           setUser(getElements()[0]);
           setLoggedIn(true);
