@@ -51,6 +51,11 @@ bookController.addBook = async (req, res, next) => {
 
 bookController.addUserBook = async (req, res, next) => {
   const { _id } = res.locals.bookID;
+  const { userID, status } = req.body;
+  const date =
+    status === 'currently reading'
+      ? new Date().toISOString().split('T')[0]
+      : null;
 };
 
 module.exports = bookController;
