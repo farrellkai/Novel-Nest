@@ -7,7 +7,8 @@ bookController.findBook = async (req, res, next) => {
   const query = 'SELECT _id FROM books WHERE title=$1 AND author=$2';
   try {
     const data = await db.query(query, [title, author]);
-    res.local.bookID = data.rows[0];
+    console.log(data.rows);
+    res.locals.bookID = data.rows[0];
     return next();
   } catch (err) {
     return next({
