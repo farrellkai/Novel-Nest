@@ -4,6 +4,9 @@ const SearchPage = ({ userID, searchData }) => {
   const { id, volumeInfo } = searchData;
   const { title, authors } = volumeInfo;
   console.log(id, title, authors, userID);
+
+  const addBook = async () => {};
+
   return (
     <div className="dropdown">
       <button className="dropbtn">Dropdown</button>
