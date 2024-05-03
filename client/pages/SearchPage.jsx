@@ -5,7 +5,10 @@ const SearchPage = ({ userID, searchData }) => {
   const { title, authors } = volumeInfo;
   console.log(id, title, authors, userID);
 
-  const addBook = async () => {};
+  const addBook = async () => {
+    try {
+    } catch (err) {}
+  };
 
   return (
     <div className="dropdown">
