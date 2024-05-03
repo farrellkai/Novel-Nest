@@ -1,10 +1,9 @@
 import React, { useState } from 'react';
 
-const SearchPage = ({ searchData }) => {
+const SearchPage = ({ userID, searchData }) => {
   const { id, volumeInfo } = searchData;
-  console.log(searchData);
-  //const { title, authors } = volumeInfo;
-  //console.log(id, title, authors);
+  const { title, authors } = volumeInfo;
+  console.log(id, title, authors, userID);
   return (
     <div className="dropdown">
       <button className="dropbtn">Dropdown</button>

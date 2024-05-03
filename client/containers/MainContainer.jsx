@@ -55,19 +55,19 @@ const MainContainer = () => {
             <Routes>
               <Route
                 path="/"
-                element={<Dashboard loggedIn={loggedIn} user={user} />}
+                element={<Dashboard loggedIn={loggedIn} userID={user} />}
               />
               <Route
                 path="/books"
-                element={<BooksPage loggedIn={loggedIn} user={user} />}
+                element={<BooksPage loggedIn={loggedIn} userID={user} />}
               />
               <Route
                 path="/clubs"
-                element={<ClubsPage loggedIn={loggedIn} user={user} />}
+                element={<ClubsPage loggedIn={loggedIn} userID={user} />}
               />
               <Route
                 path="/search"
-                element={<SearchPage searchData={searchData} />}
+                element={<SearchPage searchData={searchData} userID={user} />}
               />
             </Routes>
           </div>
