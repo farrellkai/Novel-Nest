@@ -2,6 +2,8 @@ const db = require('../models/entryModel');
 
 const bookController = {};
 
-bookController.getBook = async (req, res, next) => {};
+bookController.findBook = async (req, res, next) => {
+  const { title } = req.body;
+};
 
 module.exports = bookController;
