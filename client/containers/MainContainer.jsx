@@ -33,7 +33,8 @@ const MainContainer = () => {
       const userDataResponse = await fetch(`api/user/${user}`);
       if (!userDataResponse.ok) throw new Error('Failed to fetch user data');
       const userData = await userDataResponse.json();
-      setUser(userData);
+      const { _id } = userData;
+      setUser(_id);
       setLoggedIn(true);
     } catch (err) {
       console.log('Error:', err);
