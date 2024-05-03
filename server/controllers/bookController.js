@@ -51,6 +51,8 @@ bookController.addBook = async (req, res, next) => {
   }
 };
 
+bookController.findUserBook = async (req, res, next) => {};
+
 bookController.addUserBook = async (req, res, next) => {
   console.log('***addUserBook middleware running***');
   const { _id } = res.locals.bookID;
