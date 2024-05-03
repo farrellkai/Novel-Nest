@@ -65,7 +65,13 @@ bookController.findUserBook = async (req, res, next) => {
         message: { err: 'userBook already exists' },
       });
     else return next();
-  } catch (err) {}
+  } catch (err) {
+    return next({
+      log: 'Error in bookController.findUserBook middleware function',
+      status: 500,
+      message: { err: 'cannot find user book data' },
+    });
+  }
 };
 
 bookController.addUserBook = async (req, res, next) => {
