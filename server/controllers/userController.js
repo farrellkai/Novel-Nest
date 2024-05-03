@@ -8,6 +8,7 @@ userController.getUserID = async (req, res, next) => {
   const { username } = req.params;
   const query = 'SELECT _id FROM users WHERE username=$1';
   try {
+    const data = await db.query(query, [username]);
   } catch (err) {}
 };
 
