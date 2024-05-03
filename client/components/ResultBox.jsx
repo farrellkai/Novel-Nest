@@ -1,8 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 
-const ResultBox = (props) => {
-  const { book, getSearchData } = props;
+const ResultBox = ({ book, getSearchData }) => {
   const { id, volumeInfo } = book;
   return (
     <Link to="/search" className="page" id="searchPage">
