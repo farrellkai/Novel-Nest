@@ -9,7 +9,13 @@ bookController.findBook = async (req, res, next) => {
     const data = await db.query(query, [title, author]);
     res.local.bookID = data.rows[0];
     return next();
-  } catch (err) {}
+  } catch (err) {
+    return next({
+      log: 'Error in bookController.findBook middleware function',
+      status: 500,
+      message: { err: 'cannot find book' },
+    });
+  }
 };
 
 module.exports = bookController;
