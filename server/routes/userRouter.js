@@ -3,7 +3,7 @@ const userController = require('../controllers/userController');
 
 const userRouter = express.Router();
 
-//retrieve user data from db
+//authenticate login information
 userRouter.post(
   '/login',
   userController.findUser,
