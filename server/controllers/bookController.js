@@ -4,11 +4,17 @@ const bookController = {};
 
 //find book in db with matching title and author and pass object to next middleware function
 bookController.findBook = async (req, res, next) => {
+  if (res.locals.bookID) {
+    console.log('GOING TO THE NEXT ONE AGAIN');
+    return next();
+  }
+
   const { title, authors } = req.body;
   const query = 'SELECT _id FROM books WHERE title=$1 AND authors=$2';
   try {
     const data = await db.query(query, [title, authors]);
     res.locals.bookID = data.rows[0];
+    console.log(data.rows);
     return next();
   } catch (err) {
     return next({
