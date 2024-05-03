@@ -3,6 +3,7 @@ import React, { useState } from 'react';
 const SearchPage = (props) => {
   console.log('THESE ARE THE PROPS:', props);
   const { id, volumeInfo } = props;
+  const { title, authors } = volumeInfo;
   return (
     <div className="dropdown">
       <button className="dropbtn">Dropdown</button>
