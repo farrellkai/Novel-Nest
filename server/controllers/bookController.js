@@ -56,6 +56,8 @@ bookController.addUserBook = async (req, res, next) => {
     status === 'currently reading'
       ? new Date().toISOString().split('T')[0]
       : null;
+  const query =
+    'INSERT INTO user_books (user_id, book_id, status, started) VALUES ($1, $2, $3, $4)';
 };
 
 module.exports = bookController;
