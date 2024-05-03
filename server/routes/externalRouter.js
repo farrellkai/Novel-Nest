@@ -3,9 +3,6 @@ const externalController = require('../controllers/externalController');
 
 const externalRouter = express.Router();
 
-//experimental
-externalRouter.get('/cover', externalController.getCover, (req, res) => {});
-
 externalRouter.get('/:query', externalController.getItem, (req, res) => {
   return res
     .status(200)

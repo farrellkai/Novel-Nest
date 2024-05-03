@@ -29,15 +29,4 @@ externalController.getItem = async (req, res, next) => {
   }
 };
 
-//experimental
-externalController.getCover = async (req, res, next) => {
-  try {
-    const response = await fetch(
-      'http://books.google.com/books/content?id=9kGNEAAAQBAJ&printsec=frontcover&img=1&zoom=5&source=gbs_api'
-    );
-    const image = await response.blob();
-    console.log(image);
-  } catch (err) {}
-};
-
 module.exports = externalController;
