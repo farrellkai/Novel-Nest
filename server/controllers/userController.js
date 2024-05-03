@@ -3,16 +3,15 @@ const bcrypt = require('bcrypt');
 
 const userController = {};
 
+userController.getUserID = async (req, res, next) => {
+  console.log('***getUserID middleware running***');
+};
+
 //find if username exists in db
 userController.findUser = async (req, res, next) => {
   console.log('***findUser middleware running***');
-  //conditions regarding if its handling get or post request
-  if (req.body) {
-    //pull username from req.body
-    const { username } = req.body;
-  } else if (req.params) {
-    const { username } = req.params;
-  }
+  //pull username from req.body
+  const { username } = req.body;
   //find row with matching username in db
   const query = 'SELECT * FROM users WHERE username=$1';
   try {
