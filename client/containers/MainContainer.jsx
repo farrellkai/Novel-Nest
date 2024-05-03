@@ -28,6 +28,8 @@ const MainContainer = () => {
     return [username, password];
   };
 
+  const getUserData = () => {};
+
   if (loggedIn) {
     return (
       <div id="components">
@@ -78,18 +80,7 @@ const MainContainer = () => {
 
         if (!response.ok) throw new Error('Incorrect username or password');
         else if (response.ok) {
-          try {
-            const userDataResponse = await fetch(
-              `api/user/${getElements()[0]}`
-            );
-            if (!userDataResponse.ok)
-              throw new Error('Failed to fetch user data');
-            const userData = await userDataResponse.json();
-            setUser(userData);
-            setLoggedIn(true);
-          } catch (err) {
-            console.log('Error:', err);
-          }
+          getUserData();
         }
       } catch (err) {
         console.log('Error:', err);
