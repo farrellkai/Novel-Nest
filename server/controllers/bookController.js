@@ -59,6 +59,7 @@ bookController.addUserBook = async (req, res, next) => {
   const query =
     'INSERT INTO user_books (user_id, book_id, status, started) VALUES ($1, $2, $3, $4)';
   try {
+    await db.query(query, [userID, _id, status, date]);
   } catch (err) {}
 };
 
