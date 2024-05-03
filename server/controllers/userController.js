@@ -5,6 +5,7 @@ const userController = {};
 
 userController.getUserID = async (req, res, next) => {
   console.log('***getUserID middleware running***');
+  const { username } = req.params;
 };
 
 //find if username exists in db
