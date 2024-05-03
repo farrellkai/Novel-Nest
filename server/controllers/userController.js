@@ -10,6 +10,7 @@ userController.getUserID = async (req, res, next) => {
   try {
     const data = await db.query(query, [username]);
     res.locals.userID = data.rows[0];
+    return next();
   } catch (err) {}
 };
 
