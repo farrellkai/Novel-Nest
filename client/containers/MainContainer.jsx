@@ -79,6 +79,9 @@ const MainContainer = () => {
         if (!response.ok) throw new Error('Incorrect username or password');
         else if (response.ok) {
           try {
+            const userDataResponse = await fetch(
+              `api/user/${getElements()[0]}`
+            );
           } catch (err) {}
           setUser(getElements()[0]);
           setLoggedIn(true);
