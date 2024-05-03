@@ -21,7 +21,10 @@ bookController.findBook = async (req, res, next) => {
 
 //if book was not found in previous middleware function insert its data to db
 bookController.addBook = async (req, res, next) => {
+  //if book was found in previous middleware move on to next middleware
   if (res.locals.bookID) return next();
+
+  const { googleID, title, author } = req.body;
 };
 
 module.exports = bookController;
