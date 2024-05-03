@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 
 const SearchPage = (props) => {
+  console.log('THESE ARE THE PROPS:', props);
   return (
     <div className="dropdown">
       <button className="dropbtn">Dropdown</button>
