@@ -28,7 +28,17 @@ const MainContainer = () => {
     return [username, password];
   };
 
-  const getUserData = () => {};
+  const getUserData = async (user) => {
+    try {
+      const userDataResponse = await fetch(`api/user/${user}`);
+      if (!userDataResponse.ok) throw new Error('Failed to fetch user data');
+      const userData = await userDataResponse.json();
+      setUser(userData);
+      setLoggedIn(true);
+    } catch (err) {
+      console.log('Error:', err);
+    }
+  };
 
   if (loggedIn) {
     return (
@@ -80,7 +90,7 @@ const MainContainer = () => {
 
         if (!response.ok) throw new Error('Incorrect username or password');
         else if (response.ok) {
-          getUserData();
+          getUserData(getElements()[0]);
         }
       } catch (err) {
         console.log('Error:', err);
