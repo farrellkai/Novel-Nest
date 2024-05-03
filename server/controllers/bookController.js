@@ -4,6 +4,7 @@ const bookController = {};
 
 //find book in db with matching title and author and pass object to next middleware function
 bookController.findBook = async (req, res, next) => {
+  console.log('***findBook middleware running***');
   if (res.locals.bookID) {
     console.log('GOING TO THE NEXT ONE AGAIN');
     return next();
@@ -27,6 +28,7 @@ bookController.findBook = async (req, res, next) => {
 
 //if book was not found in previous middleware function insert its data to db
 bookController.addBook = async (req, res, next) => {
+  console.log('***addBook middleware running***');
   //if book was found in previous middleware move on to next middleware
   if (res.locals.bookID) {
     console.log('GOING TO THE NEXT ONE');
@@ -50,6 +52,7 @@ bookController.addBook = async (req, res, next) => {
 };
 
 bookController.addUserBook = async (req, res, next) => {
+  console.log('***addUserBook middleware running***');
   const { _id } = res.locals.bookID;
   const { userID, status } = req.body;
   const date =
