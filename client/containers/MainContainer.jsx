@@ -157,8 +157,7 @@ const MainContainer = () => {
 
         if (!response.ok) throw new Error('something went wrong');
         else if (response.ok) {
-          setUser(getElements()[0]);
-          setLoggedIn(true);
+          getUserData(getElements()[0]);
         }
       } catch (err) {
         console.log('Error:', err);
