@@ -87,7 +87,9 @@ const MainContainer = () => {
             const userData = await userDataResponse.json();
             setUser(userData);
             setLoggedIn(true);
-          } catch (err) {}
+          } catch (err) {
+            console.log('Error:', err);
+          }
         }
       } catch (err) {
         console.log('Error:', err);
