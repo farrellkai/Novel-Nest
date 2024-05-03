@@ -65,7 +65,13 @@ bookController.addUserBook = async (req, res, next) => {
     await db.query(query, [userID, _id, status, date]);
     console.log('***USER BOOK DATA ADDED***');
     return next();
-  } catch (err) {}
+  } catch (err) {
+    return next({
+      log: 'Error in bookController.addUserBook middleware function',
+      status: 500,
+      message: { err: 'cannot add user book data' },
+    });
+  }
 };
 
 module.exports = bookController;
