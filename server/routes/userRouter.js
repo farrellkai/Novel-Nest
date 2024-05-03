@@ -3,6 +3,8 @@ const userController = require('../controllers/userController');
 
 const userRouter = express.Router();
 
+userRouter.get('/:username', userController.findUser, (req, res) => {});
+
 //authenticate login information
 userRouter.post(
   '/login',
