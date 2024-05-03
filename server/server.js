@@ -4,6 +4,7 @@ const app = express();
 
 const userRouter = require('./routes/userRouter');
 const externalRouter = require('./routes/externalRouter');
+const bookRouter = require('./routes/bookRouter');
 
 const PORT = 3000;
 
@@ -14,6 +15,7 @@ app.use(express.json());
 //request to router
 app.use('/api/user', userRouter);
 app.use('/api/external', externalRouter);
+app.use('/api/book', bookRouter);
 
 //handles errors for any undefined route
 app.use('*', (req, res) => {
