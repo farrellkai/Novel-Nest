@@ -24,14 +24,20 @@ bookController.addBook = async (req, res, next) => {
   //if book was found in previous middleware move on to next middleware
   if (res.locals.bookID) return next();
 
-  const { googleID, title, author } = req.body;
+  const { googleID, title, authors } = req.body;
   const query =
-    'INSERT INTO books (google_id, title, author) VALUES ($1, $2, $3)';
+    'INSERT INTO books (google_id, title, authors) VALUES ($1, $2, $3)';
   try {
-    await db.query(query, [googleID, title, author]);
-    console.log('***USER CREATED***');
+    await db.query(query, [googleID, title, authors]);
+    console.log('***BOOK DATA ADDED***');
     return next();
-  } catch (err) {}
+  } catch (err) {
+    return next({
+      log: 'Error in bookController.addBook middleware function',
+      status: 500,
+      message: { err: 'cannot add book data' },
+    });
+  }
 };
 
 module.exports = bookController;
