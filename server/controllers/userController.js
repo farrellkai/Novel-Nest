@@ -11,7 +11,13 @@ userController.getUserID = async (req, res, next) => {
     const data = await db.query(query, [username]);
     res.locals.userID = data.rows[0];
     return next();
-  } catch (err) {}
+  } catch (err) {
+    return next({
+      log: 'Error in userController.getUserID middleware function',
+      status: 500,
+      message: { err: 'cannot get user id' },
+    });
+  }
 };
 
 //find if username exists in db
