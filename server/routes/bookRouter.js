@@ -8,6 +8,7 @@ bookRouter.post(
   bookController.findBook,
   bookController.addBook,
   bookController.findBook,
+  bookController.findUserBook,
   bookController.addUserBook,
   (req, res) => {
     return res.sendStatus(200);
