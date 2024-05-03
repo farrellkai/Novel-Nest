@@ -84,6 +84,7 @@ const MainContainer = () => {
             );
             if (!userDataResponse.ok)
               throw new Error('Failed to fetch user data');
+            const userData = await userDataResponse.json();
           } catch (err) {}
           setUser(getElements()[0]);
           setLoggedIn(true);
