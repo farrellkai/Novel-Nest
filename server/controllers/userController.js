@@ -6,6 +6,7 @@ const userController = {};
 userController.getUserID = async (req, res, next) => {
   console.log('***getUserID middleware running***');
   const { username } = req.params;
+  const query = 'SELECT _id FROM users WHERE username=$1';
 };
 
 //find if username exists in db
