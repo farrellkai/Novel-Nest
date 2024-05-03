@@ -3,7 +3,7 @@ const userController = require('../controllers/userController');
 
 const userRouter = express.Router();
 
-userRouter.get('/:username', userController.findUser, (req, res) => {
+userRouter.get('/:username', userController.getUserID, (req, res) => {
   return res.status(200).json(res.locals.userID);
 });
 
