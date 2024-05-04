@@ -7,6 +7,8 @@ bookController.findBookID = async (req, res, next) => {
   console.log('***findBookID middleware running***');
   const { googleID } = req.params;
   const query = 'SELECT _id FROM books WHERE google_id=$1';
+  try {
+  } catch (err) {}
 };
 
 //find book in db with matching title and author and pass object to next middleware function
