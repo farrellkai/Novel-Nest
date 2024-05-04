@@ -11,6 +11,7 @@ userController.checkMethod = (req, res, next) => {
     const { username } = req.body;
     res.locals.username = username;
   }
+  return next();
 };
 
 userController.getUserID = async (req, res, next) => {
