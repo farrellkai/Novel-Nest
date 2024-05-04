@@ -21,6 +21,9 @@ const SearchPage = ({ userID, searchData }) => {
         }),
       });
       if (!response.ok) throw new Error('Cannot add book data');
+      else if (response.ok) {
+        //SET UP STATE HANDLING
+      }
     } catch (err) {}
   };
 
