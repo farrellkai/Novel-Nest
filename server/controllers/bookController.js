@@ -3,7 +3,9 @@ const db = require('../models/entryModel');
 const bookController = {};
 
 //find book data by id
-bookController.findBookID = async (req, res, next) => {};
+bookController.findBookID = async (req, res, next) => {
+  console.log('***findBookID middleware running***');
+};
 
 //find book in db with matching title and author and pass object to next middleware function
 bookController.findBook = async (req, res, next) => {
