@@ -5,8 +5,21 @@ const SearchPage = ({ userID, searchData }) => {
   const { title, authors } = volumeInfo;
   console.log(id, title, authors, userID);
 
-  const addBook = async (status) => {
+  const addBook = async (statusElement) => {
     try {
+      const response = await fetch('api/book', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          userID: userID,
+          googleID: id,
+          title: title,
+          authors: authors,
+          status: statusElement,
+        }),
+      });
     } catch (err) {}
   };
 
