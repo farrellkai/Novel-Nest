@@ -19,7 +19,7 @@ userController.checkMethod = (req, res, next) => {
 userController.findUser = async (req, res, next) => {
   console.log('***findUser middleware running***');
   //pull username from req.body
-  const { username } = req.body;
+  const { username } = res.locals;
   //find row with matching username in db
   const query = 'SELECT * FROM users WHERE username=$1';
   try {
