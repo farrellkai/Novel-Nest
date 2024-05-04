@@ -8,8 +8,8 @@ userRouter.get(
   userController.checkMethod,
   userController.findUser,
   (req, res) => {
-    const { _id } = res.locals.user;
-    return res.status(200).json(_id);
+    const { _id, username } = res.locals.user;
+    return res.status(200).json({ _id: _id, username: username });
   }
 );
 

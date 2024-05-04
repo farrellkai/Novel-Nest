@@ -9,7 +9,7 @@ import SearchPage from '../pages/SearchPage';
 
 const MainContainer = () => {
   const [loggedIn, setLoggedIn] = useState(false);
-  const [user, setUser] = useState(null);
+  const [user, setUser] = useState();
   const [hasAccount, setHasAccount] = useState(true);
   const [searchData, setSearchData] = useState({});
 
