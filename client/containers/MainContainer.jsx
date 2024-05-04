@@ -10,6 +10,7 @@ import SearchPage from '../pages/SearchPage';
 const MainContainer = () => {
   const [loggedIn, setLoggedIn] = useState(false);
   const [userID, setUserID] = useState();
+  const [displayUsername, setDisplayUsername] = useState();
   const [hasAccount, setHasAccount] = useState(true);
   const [searchData, setSearchData] = useState({});
 
@@ -33,8 +34,9 @@ const MainContainer = () => {
       const userDataResponse = await fetch(`api/user/${user}`);
       if (!userDataResponse.ok) throw new Error('Failed to fetch user data');
       const userData = await userDataResponse.json();
-      const { _id } = userData;
+      const { _id, username } = userData;
       setUserID(_id);
+      setDisplayUsername(username);
       setLoggedIn(true);
     } catch (err) {
       console.log('Error:', err);
