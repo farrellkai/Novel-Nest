@@ -9,6 +9,8 @@ const SearchPage = ({ userID, searchData }) => {
     try {
       const response = await fetch(`api/book/${id}`);
       if (!response.ok) throw new Error('Cannot get book data');
+      else if (response.ok) {
+      }
     } catch (err) {}
   };
 
