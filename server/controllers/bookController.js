@@ -2,6 +2,8 @@ const db = require('../models/entryModel');
 
 const bookController = {};
 
+bookController.checkMethod = (req, res, next) => {};
+
 //find book data by id
 bookController.findBookID = async (req, res, next) => {
   console.log('***findBookID middleware running***');
