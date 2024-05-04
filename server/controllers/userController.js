@@ -4,6 +4,7 @@ const bcrypt = require('bcrypt');
 const userController = {};
 
 userController.checkMethod = (req, res, next) => {
+  console.log('***checkMethod middleware running***');
   if (req.method === 'GET') {
     const { username } = req.params;
     res.locals.username = username;
