@@ -8,6 +8,7 @@ userController.checkMethod = (req, res, next) => {
     const { username } = req.params;
     res.locals.username = username;
   } else if (req.method === 'POST') {
+    const { username } = req.body;
   }
 };
 
