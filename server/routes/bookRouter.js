@@ -3,6 +3,8 @@ const bookController = require('../controllers/bookController');
 
 const bookRouter = express.Router();
 
+bookRouter.get('/googleID', (req, res) => {});
+
 bookRouter.post(
   '/',
   bookController.findBook,
