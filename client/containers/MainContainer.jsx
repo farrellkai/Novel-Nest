@@ -9,7 +9,7 @@ import SearchPage from '../pages/SearchPage';
 
 const MainContainer = () => {
   const [loggedIn, setLoggedIn] = useState(false);
-  const [user, setUser] = useState();
+  const [userID, setUserID] = useState();
   const [hasAccount, setHasAccount] = useState(true);
   const [searchData, setSearchData] = useState({});
 
@@ -34,7 +34,7 @@ const MainContainer = () => {
       if (!userDataResponse.ok) throw new Error('Failed to fetch user data');
       const userData = await userDataResponse.json();
       const { _id } = userData;
-      setUser(_id);
+      setUserID(_id);
       setLoggedIn(true);
     } catch (err) {
       console.log('Error:', err);
@@ -55,19 +55,19 @@ const MainContainer = () => {
             <Routes>
               <Route
                 path="/"
-                element={<Dashboard loggedIn={loggedIn} userID={user} />}
+                element={<Dashboard loggedIn={loggedIn} userID={userID} />}
               />
               <Route
                 path="/books"
-                element={<BooksPage loggedIn={loggedIn} userID={user} />}
+                element={<BooksPage loggedIn={loggedIn} userID={userID} />}
               />
               <Route
                 path="/clubs"
-                element={<ClubsPage loggedIn={loggedIn} userID={user} />}
+                element={<ClubsPage loggedIn={loggedIn} userID={userID} />}
               />
               <Route
                 path="/search"
-                element={<SearchPage searchData={searchData} userID={user} />}
+                element={<SearchPage searchData={searchData} userID={userID} />}
               />
             </Routes>
           </div>
