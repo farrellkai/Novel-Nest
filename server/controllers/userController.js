@@ -7,6 +7,7 @@ userController.checkMethod = (req, res, next) => {
   if (req.method === 'GET') {
     const { username } = req.params;
     res.locals.username = username;
+  } else if (req.method === 'POST') {
   }
 };
 
