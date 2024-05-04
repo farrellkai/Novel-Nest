@@ -4,7 +4,8 @@ const userController = require('../controllers/userController');
 const userRouter = express.Router();
 
 userRouter.get('/:username', userController.getUserID, (req, res) => {
-  return res.status(200).json(res.locals.userID);
+  const { _id } = res.locals.user;
+  return res.status(200).json(_id);
 });
 
 //authenticate login information
