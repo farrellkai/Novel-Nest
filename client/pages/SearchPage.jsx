@@ -20,6 +20,7 @@ const SearchPage = ({ userID, searchData }) => {
           status: statusElement,
         }),
       });
+      if (!response.ok) throw new Error('Cannot add book data');
     } catch (err) {}
   };
 
