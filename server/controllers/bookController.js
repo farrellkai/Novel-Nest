@@ -10,6 +10,7 @@ bookController.findBookID = async (req, res, next) => {
   try {
     const data = await db.query(query, [googleID]);
     res.locals.bookID = data.rows[0];
+    return next();
   } catch (err) {}
 };
 
