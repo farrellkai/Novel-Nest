@@ -7,6 +7,7 @@ const SearchPage = ({ userID, searchData }) => {
 
   const getBookData = async () => {
     try {
+      const response = await fetch(`api/book/${id}`);
     } catch (err) {}
   };
 
