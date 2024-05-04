@@ -10,6 +10,7 @@ userRouter.get('/:username', userController.getUserID, (req, res) => {
 //authenticate login information
 userRouter.post(
   '/login',
+  userController.checkMethod,
   userController.findUser,
   userController.varifyUser,
   (req, res) => {
