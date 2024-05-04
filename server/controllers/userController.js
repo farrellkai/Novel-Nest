@@ -15,23 +15,6 @@ userController.checkMethod = (req, res, next) => {
   return next();
 };
 
-userController.getUserID = async (req, res, next) => {
-  console.log('***getUserID middleware running***');
-  const { username } = req.params;
-  const query = 'SELECT _id FROM users WHERE username=$1';
-  try {
-    const data = await db.query(query, [username]);
-    res.locals.userID = data.rows[0];
-    return next();
-  } catch (err) {
-    return next({
-      log: 'Error in userController.getUserID middleware function',
-      status: 500,
-      message: { err: 'cannot get user id' },
-    });
-  }
-};
-
 //find if username exists in db
 userController.findUser = async (req, res, next) => {
   console.log('***findUser middleware running***');
