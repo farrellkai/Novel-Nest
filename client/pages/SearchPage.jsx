@@ -5,6 +5,8 @@ const SearchPage = ({ userID, searchData }) => {
   const { title, authors } = volumeInfo;
   console.log(id, title, authors, userID);
 
+  const getBookData = async () => {};
+
   const addBook = async (statusElement) => {
     try {
       const response = await fetch('api/book', {
@@ -22,6 +24,7 @@ const SearchPage = ({ userID, searchData }) => {
       });
       if (!response.ok) throw new Error('Cannot add book data');
       else if (response.ok) {
+        console.log('BOOK DATA ADDED');
         //SET UP STATE HANDLING
       }
     } catch (err) {
