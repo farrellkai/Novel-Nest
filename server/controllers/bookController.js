@@ -9,6 +9,7 @@ bookController.findBookID = async (req, res, next) => {
   const query = 'SELECT _id FROM books WHERE google_id=$1';
   try {
     const data = await db.query(query, [googleID]);
+    res.locals.bookID = data.rows[0];
   } catch (err) {}
 };
 
@@ -25,7 +26,6 @@ bookController.findBook = async (req, res, next) => {
   try {
     const data = await db.query(query, [title, authors]);
     res.locals.bookID = data.rows[0];
-    console.log(data.rows);
     return next();
   } catch (err) {
     return next({
