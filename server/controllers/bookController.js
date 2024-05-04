@@ -2,6 +2,7 @@ const db = require('../models/entryModel');
 
 const bookController = {};
 
+//START HERE WHEN YOU COME BACK!
 bookController.checkMethod = (req, res, next) => {};
 
 //find book data by id
