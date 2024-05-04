@@ -3,10 +3,15 @@ const userController = require('../controllers/userController');
 
 const userRouter = express.Router();
 
-userRouter.get('/:username', userController.findUser, (req, res) => {
-  const { _id } = res.locals.user;
-  return res.status(200).json(_id);
-});
+userRouter.get(
+  '/:username',
+  userController.checkMethod,
+  userController.findUser,
+  (req, res) => {
+    const { _id } = res.locals.user;
+    return res.status(200).json(_id);
+  }
+);
 
 //authenticate login information
 userRouter.post(
