@@ -5,7 +5,10 @@ const SearchPage = ({ userID, searchData }) => {
   const { title, authors } = volumeInfo;
   console.log(id, title, authors, userID);
 
-  const getBookData = async () => {};
+  const getBookData = async () => {
+    try {
+    } catch (err) {}
+  };
 
   const addBook = async (statusElement) => {
     try {
