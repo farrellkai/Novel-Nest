@@ -8,6 +8,7 @@ const SearchPage = ({ userID, searchData }) => {
   const getBookData = async () => {
     try {
       const response = await fetch(`api/book/${id}`);
+      if (!response.ok) throw new Error('Cannot get book data');
     } catch (err) {}
   };
 
