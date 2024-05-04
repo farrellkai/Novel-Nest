@@ -10,6 +10,7 @@ const SearchPage = ({ userID, searchData }) => {
       const response = await fetch(`api/book/${id}`);
       if (!response.ok) throw new Error('Cannot get book data');
       else if (response.ok) {
+        const data = response.json();
       }
     } catch (err) {}
   };
