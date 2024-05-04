@@ -3,6 +3,8 @@ const bcrypt = require('bcrypt');
 
 const userController = {};
 
+userController.checkMethod = (req, res, next) => {};
+
 userController.getUserID = async (req, res, next) => {
   console.log('***getUserID middleware running***');
   const { username } = req.params;
