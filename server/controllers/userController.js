@@ -5,6 +5,7 @@ const userController = {};
 
 userController.checkMethod = (req, res, next) => {
   if (req.method === 'GET') {
+    const { username } = req.params;
   }
 };
 
