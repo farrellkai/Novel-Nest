@@ -27,6 +27,7 @@ userRouter.post(
 //submit user data into db
 userRouter.post(
   '/signup',
+  userController.checkMethod,
   userController.findUser,
   userController.allowUser,
   userController.allowEmail,
