@@ -24,7 +24,9 @@ const SearchPage = ({ userID, searchData }) => {
       else if (response.ok) {
         //SET UP STATE HANDLING
       }
-    } catch (err) {}
+    } catch (err) {
+      console.log('Error:', err);
+    }
   };
 
   return (
