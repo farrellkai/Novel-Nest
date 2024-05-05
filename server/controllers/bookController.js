@@ -7,12 +7,12 @@ bookController.checkMethod = (req, res, next) => {
   console.log('***checkMethod middleware running***');
   if (req.method === 'GET') {
     const { googleID, userID } = req.params;
-    res.locals.googleID = googleID;
-    res.locals.userID = userID;
+    res.locals.IDs.googleID = googleID;
+    res.locals.IDs.userID = userID;
   } else if (req.method === 'POST') {
     const { googleID, userID } = req.body;
-    res.locals.googleID = googleID;
-    res.locals.userID = userID;
+    res.locals.IDs.googleID = googleID;
+    res.locals.IDs.userID = userID;
   }
   return next();
 };
@@ -20,7 +20,7 @@ bookController.checkMethod = (req, res, next) => {
 //find book in db with matching title and author and pass object to next middleware function
 bookController.findBook = async (req, res, next) => {
   console.log('***findBook middleware running***');
-  if (res.locals.bookID) {
+  if (res.locals.IDs.bookID) {
     console.log('GOING TO THE NEXT ONE AGAIN');
     return next();
   }
@@ -29,7 +29,7 @@ bookController.findBook = async (req, res, next) => {
   const query = 'SELECT _id FROM books WHERE google_id=$1';
   try {
     const data = await db.query(query, [googleID]);
-    res.locals.bookID = data.rows[0];
+    res.locals.IDs.bookID = data.rows[0];
     return next();
   } catch (err) {
     return next({
@@ -44,12 +44,13 @@ bookController.findBook = async (req, res, next) => {
 bookController.addBook = async (req, res, next) => {
   console.log('***addBook middleware running***');
   //if book was found in previous middleware move on to next middleware
-  if (res.locals.bookID) {
+  if (res.locals.IDs.bookID) {
     console.log('GOING TO THE NEXT ONE');
     return next();
   }
 
-  const { googleID, title, authors } = req.body;
+  const { title, authors } = req.body;
+  const { googleID } = res.locals.IDs;
   const query =
     'INSERT INTO books (google_id, title, authors) VALUES ($1, $2, $3)';
   try {
@@ -67,11 +68,12 @@ bookController.addBook = async (req, res, next) => {
 
 bookController.findUserBook = async (req, res, next) => {
   console.log('***findUserBook middleware running***');
-  const { _id } = res.locals.bookID;
-  const { userID } = res.locals.userID;
+  const { bookID } = res.locals.IDs;
+  console.log('bookID is:', bookID);
+  const { userID } = res.locals.IDs;
   const query = 'SELECT * FROM user_books WHERE user_id=$1 AND book_id=$2';
   try {
-    const data = await db.query(query, [userID, _id]);
+    const data = await db.query(query, [userID, bookID]);
     if (data.rows[0])
       return next({
         log: 'Error in bookController.findUserBook middleware function',
@@ -90,8 +92,8 @@ bookController.findUserBook = async (req, res, next) => {
 
 bookController.addUserBook = async (req, res, next) => {
   console.log('***addUserBook middleware running***');
-  const { _id } = res.locals.bookID;
-  const { userID, status } = req.body;
+  const { bookID, userID } = res.locals.IDs;
+  const { status } = req.body;
   const date =
     status === 'currently reading'
       ? new Date().toISOString().split('T')[0]
