@@ -3,7 +3,17 @@ const db = require('../models/entryModel');
 const bookController = {};
 
 //START HERE WHEN YOU COME BACK!
-bookController.checkMethod = (req, res, next) => {};
+bookController.checkMethod = (req, res, next) => {
+  console.log('***checkMethod middleware running***');
+  if (req.method === 'GET') {
+    const { googleID } = req.params;
+    res.locals.googleID = googleID;
+  } else if (req.method === 'POST') {
+    const { googleID } = req.body;
+    res.locals.googleID = googleID;
+  }
+  return next();
+};
 
 //find book data by id
 bookController.findBookID = async (req, res, next) => {
