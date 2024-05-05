@@ -5,12 +5,11 @@ const bookController = {};
 //START HERE WHEN YOU COME BACK!
 bookController.checkMethod = (req, res, next) => {
   console.log('***checkMethod middleware running***');
-  console.log(req.method);
+  console.log('method is:', req.method);
   if (req.method === 'GET') {
     const { googleID, userID } = req.params;
     res.locals.IDs = { googleID: googleID, userID: userID };
   } else if (req.method === 'POST') {
-    console.log('WE MADE IT THIS FAR!');
     const { googleID, userID } = req.body;
     res.locals.IDs = { googleID: googleID, userID: userID };
   }
@@ -26,7 +25,6 @@ bookController.findBook = async (req, res, next) => {
   }
 
   const { googleID } = res.locals.IDs;
-  console.log('googleID is:', googleID);
   const query = 'SELECT _id FROM books WHERE google_id=$1';
   try {
     const data = await db.query(query, [googleID]);
@@ -35,8 +33,6 @@ bookController.findBook = async (req, res, next) => {
       const { _id } = data.rows[0];
       res.locals.IDs.bookID = _id;
     } else res.locals.IDs.bookID = null;
-
-    console.log('res.locals.IDs.bookID:', res.locals.IDs.bookID);
     return next();
   } catch (err) {
     return next({
@@ -75,9 +71,7 @@ bookController.addBook = async (req, res, next) => {
 
 bookController.findUserBook = async (req, res, next) => {
   console.log('***findUserBook middleware running***');
-  const { bookID } = res.locals.IDs;
-  console.log('bookID is:', bookID);
-  const { userID } = res.locals.IDs;
+  const { userID, bookID } = res.locals.IDs;
   const query = 'SELECT * FROM user_books WHERE user_id=$1 AND book_id=$2';
   try {
     const data = await db.query(query, [userID, bookID]);
@@ -99,8 +93,7 @@ bookController.findUserBook = async (req, res, next) => {
 
 bookController.addUserBook = async (req, res, next) => {
   console.log('***addUserBook middleware running***');
-  const { bookID, userID } = res.locals.IDs;
-  console.log('bookID is:', bookID);
+  const { userID, bookID } = res.locals.IDs;
   const { status } = req.body;
   const date =
     status === 'currently reading'
