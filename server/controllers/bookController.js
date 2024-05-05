@@ -5,14 +5,14 @@ const bookController = {};
 //START HERE WHEN YOU COME BACK!
 bookController.checkMethod = (req, res, next) => {
   console.log('***checkMethod middleware running***');
+  console.log(req.method);
   if (req.method === 'GET') {
     const { googleID, userID } = req.params;
-    res.locals.IDs.googleID = googleID;
-    res.locals.IDs.userID = userID;
+    res.locals.IDs = { googleID: googleID, userID: userID };
   } else if (req.method === 'POST') {
+    console.log('WE MADE IT THIS FAR!');
     const { googleID, userID } = req.body;
-    res.locals.IDs.googleID = googleID;
-    res.locals.IDs.userID = userID;
+    res.locals.IDs = { googleID: googleID, userID: userID };
   }
   return next();
 };
@@ -25,11 +25,14 @@ bookController.findBook = async (req, res, next) => {
     return next();
   }
 
-  const { googleID } = res.locals;
+  const { googleID } = res.locals.IDs;
+  console.log('googleID is:', googleID);
   const query = 'SELECT _id FROM books WHERE google_id=$1';
   try {
     const data = await db.query(query, [googleID]);
-    res.locals.IDs.bookID = data.rows[0];
+    const { _id } = data.rows[0];
+    res.locals.IDs.bookID = _id;
+    console.log('res.locals.IDs.bookID:', res.locals.IDs.bookID);
     return next();
   } catch (err) {
     return next({
@@ -93,6 +96,7 @@ bookController.findUserBook = async (req, res, next) => {
 bookController.addUserBook = async (req, res, next) => {
   console.log('***addUserBook middleware running***');
   const { bookID, userID } = res.locals.IDs;
+  console.log('bookID is:', bookID);
   const { status } = req.body;
   const date =
     status === 'currently reading'
@@ -101,7 +105,7 @@ bookController.addUserBook = async (req, res, next) => {
   const query =
     'INSERT INTO user_books (user_id, book_id, status, started) VALUES ($1, $2, $3, $4)';
   try {
-    await db.query(query, [userID, _id, status, date]);
+    await db.query(query, [userID, bookID, status, date]);
     console.log('***USER BOOK DATA ADDED***');
     return next();
   } catch (err) {
