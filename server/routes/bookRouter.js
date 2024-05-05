@@ -7,6 +7,7 @@ bookRouter.get('/googleID', (req, res) => {});
 
 bookRouter.post(
   '/',
+  bookController.checkMethod,
   bookController.findBook,
   bookController.addBook,
   bookController.findBook,
