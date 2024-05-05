@@ -30,8 +30,12 @@ bookController.findBook = async (req, res, next) => {
   const query = 'SELECT _id FROM books WHERE google_id=$1';
   try {
     const data = await db.query(query, [googleID]);
-    const { _id } = data.rows[0];
-    res.locals.IDs.bookID = _id;
+
+    if (data.rows[0]) {
+      const { _id } = data.rows[0];
+      res.locals.IDs.bookID = _id;
+    } else res.locals.IDs.bookID = null;
+
     console.log('res.locals.IDs.bookID:', res.locals.IDs.bookID);
     return next();
   } catch (err) {
