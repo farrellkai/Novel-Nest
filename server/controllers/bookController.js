@@ -68,7 +68,7 @@ bookController.addBook = async (req, res, next) => {
 bookController.findUserBook = async (req, res, next) => {
   console.log('***findUserBook middleware running***');
   const { _id } = res.locals.bookID;
-  const { userID } = req.body;
+  const { userID } = res.locals.userID;
   const query = 'SELECT * FROM user_books WHERE user_id=$1 AND book_id=$2';
   try {
     const data = await db.query(query, [userID, _id]);
