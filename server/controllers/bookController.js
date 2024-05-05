@@ -23,7 +23,7 @@ bookController.findBook = async (req, res, next) => {
     return next();
   }
 
-  const { title, authors } = req.body;
+  const { googleID } = res.locals;
   const query = 'SELECT _id FROM books WHERE title=$1 AND authors=$2';
   try {
     const data = await db.query(query, [title, authors]);
