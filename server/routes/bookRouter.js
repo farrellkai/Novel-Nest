@@ -3,7 +3,12 @@ const bookController = require('../controllers/bookController');
 
 const bookRouter = express.Router();
 
-bookRouter.get('/book-status', bookController.checkMethod, (req, res) => {});
+bookRouter.get(
+  '/book-status',
+  bookController.checkMethod,
+  bookController.findBook,
+  (req, res) => {}
+);
 
 bookRouter.post(
   '/',
