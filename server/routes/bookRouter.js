@@ -7,6 +7,7 @@ bookRouter.get(
   '/book-status',
   bookController.checkMethod,
   bookController.findBook,
+  bookController.findUserBook,
   (req, res) => {}
 );
 
