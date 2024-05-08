@@ -88,6 +88,12 @@ bookController.findUserBook = async (req, res, next) => {
 
 bookController.addUserBook = async (req, res, next) => {
   console.log('***addUserBook middleware running***');
+  if (res.locals.userBook)
+    return next({
+      log: 'Error in bookController.findUserBook middleware function',
+      status: 409,
+      message: { err: 'userBook already exists' },
+    });
   const { userID, bookID } = res.locals.IDs;
   const { status } = req.body;
   const date =
