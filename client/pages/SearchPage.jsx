@@ -5,18 +5,20 @@ const SearchPage = ({ userID, searchData }) => {
   const { title, authors } = volumeInfo;
   console.log(id, title, authors, userID);
 
-  // const getBookData = async () => {
-  //   try {
-  //     const response = await fetch(`api/book/${id}`);
-  //     if (!response.ok) throw new Error('Cannot get book data');
-  //     else if (response.ok) {
-  //       const data = response.json();
-  //       console.log(data);
-  //     }
-  //   } catch (err) {
-  //     console.log('Error:', err);
-  //   }
-  // };
+  const getBookStatus = async () => {
+    try {
+      const response = await fetch(
+        `api/book/book-status?userID=${userID}&googleID=${id}`
+      );
+      if (!response.ok) throw new Error('Cannot get book data');
+      else if (response.ok) {
+        const data = response.json();
+        console.log(data);
+      }
+    } catch (err) {
+      console.log('Error:', err);
+    }
+  };
 
   const addBook = async (statusElement) => {
     try {
@@ -45,6 +47,7 @@ const SearchPage = ({ userID, searchData }) => {
 
   return (
     <div className="dropdown">
+      <button onClick={() => getBookStatus()}>Get Book Status</button>
       <button className="dropbtn">Dropdown</button>
       <div className="dropdown-content">
         <a onClick={() => addBook('want to read')}>Want to Read</a>
