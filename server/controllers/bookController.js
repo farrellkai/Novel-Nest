@@ -75,6 +75,7 @@ bookController.findUserBook = async (req, res, next) => {
   const query = 'SELECT * FROM user_books WHERE user_id=$1 AND book_id=$2';
   try {
     const data = await db.query(query, [userID, bookID]);
+    res.locals.userBook = data.rows[0];
     return next();
   } catch (err) {
     return next({
