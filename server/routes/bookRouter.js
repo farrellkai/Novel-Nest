@@ -3,7 +3,7 @@ const bookController = require('../controllers/bookController');
 
 const bookRouter = express.Router();
 
-bookRouter.get('/googleID', (req, res) => {});
+bookRouter.get('/book-status', (req, res) => {});
 
 bookRouter.post(
   '/',
