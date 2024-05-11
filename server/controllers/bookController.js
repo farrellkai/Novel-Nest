@@ -76,6 +76,7 @@ bookController.findUserBook = async (req, res, next) => {
   try {
     const data = await db.query(query, [userID, bookID]);
     res.locals.userBook = data.rows[0];
+    console.log(res.locals.userBook);
     return next();
   } catch (err) {
     return next({

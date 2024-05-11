@@ -9,7 +9,8 @@ bookRouter.get(
   bookController.findBook,
   bookController.findUserBook,
   (req, res) => {
-    return res.status(200).json(res.locals.userBook);
+    data = res.locals.userBook ? res.locals.userBook : { status: undefined };
+    return res.status(200).json(data);
   }
 );
 
