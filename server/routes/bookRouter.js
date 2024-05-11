@@ -8,7 +8,9 @@ bookRouter.get(
   bookController.checkMethod,
   bookController.findBook,
   bookController.findUserBook,
-  (req, res) => {}
+  (req, res) => {
+    return res.status(200).json(res.locals.userBook);
+  }
 );
 
 bookRouter.post(
