@@ -7,7 +7,7 @@ bookController.checkMethod = (req, res, next) => {
   console.log('***checkMethod middleware running***');
   console.log('method is:', req.method);
   if (req.method === 'GET') {
-    const { googleID, userID } = req.params;
+    const { googleID, userID } = req.query;
     res.locals.IDs = { googleID: googleID, userID: userID };
   } else if (req.method === 'POST') {
     const { googleID, userID } = req.body;
@@ -25,6 +25,7 @@ bookController.findBook = async (req, res, next) => {
   }
 
   const { googleID } = res.locals.IDs;
+  console.log(googleID);
   const query = 'SELECT _id FROM books WHERE google_id=$1';
   try {
     const data = await db.query(query, [googleID]);
@@ -72,9 +73,11 @@ bookController.addBook = async (req, res, next) => {
 bookController.findUserBook = async (req, res, next) => {
   console.log('***findUserBook middleware running***');
   const { userID, bookID } = res.locals.IDs;
+  console.log('userID:', userID, 'bookID:', bookID);
   const query = 'SELECT * FROM user_books WHERE user_id=$1 AND book_id=$2';
   try {
     const data = await db.query(query, [userID, bookID]);
+    console.log(data.rows[0]);
     res.locals.userBook = data.rows[0];
     return next();
   } catch (err) {

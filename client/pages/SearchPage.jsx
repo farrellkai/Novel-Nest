@@ -12,7 +12,7 @@ const SearchPage = ({ userID, searchData }) => {
       );
       if (!response.ok) throw new Error('Cannot get book data');
       else if (response.ok) {
-        const data = response.json();
+        const data = await response.json();
         console.log(data);
       }
     } catch (err) {
