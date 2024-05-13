@@ -14,7 +14,11 @@ bookRouter.get(
   }
 );
 
-bookRouter.get('/all-books/:userID', (req, res) => {});
+bookRouter.get(
+  '/all-books/:userID',
+  bookController.findUserBooks,
+  (req, res) => {}
+);
 
 bookRouter.post(
   '/',
