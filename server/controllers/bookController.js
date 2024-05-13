@@ -88,6 +88,7 @@ bookController.findUserBook = async (req, res, next) => {
 
 bookController.findUserBooks = async (req, res, next) => {
   console.log('***findUserBooks middleware running***');
+  const { userID } = req.params;
 };
 
 bookController.addUserBook = async (req, res, next) => {
