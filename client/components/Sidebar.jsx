@@ -13,6 +13,9 @@ const Sidebar = () => {
       <Link to="/clubs" className="page" id="clubs">
         Your Book Clubs
       </Link>
+      <Link to="/friends" className="page" id="friends">
+        Your Friends
+      </Link>
     </div>
   );
 };
