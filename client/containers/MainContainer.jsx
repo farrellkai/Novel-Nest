@@ -6,6 +6,7 @@ import Dashboard from '../pages/Dashboard';
 import ClubsPage from '../pages/ClubsPage';
 import Searchbar from '../components/Searchbar';
 import SearchPage from '../pages/SearchPage';
+import FriendsPage from '../pages/FriendsPage';
 
 const MainContainer = () => {
   const [loggedIn, setLoggedIn] = useState(false);
@@ -66,6 +67,10 @@ const MainContainer = () => {
               <Route
                 path="/clubs"
                 element={<ClubsPage loggedIn={loggedIn} userID={userID} />}
+              />
+              <Route
+                path="/friends"
+                element={<FriendsPage loggedIn={loggedIn} userID={userID} />}
               />
               <Route
                 path="/search"
