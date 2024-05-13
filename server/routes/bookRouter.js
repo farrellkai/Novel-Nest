@@ -14,7 +14,7 @@ bookRouter.get(
   }
 );
 
-bookRouter.get('/all-books', (req, res) => {});
+bookRouter.get('/all-books/:userID', (req, res) => {});
 
 bookRouter.post(
   '/',
