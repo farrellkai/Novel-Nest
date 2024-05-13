@@ -90,6 +90,8 @@ bookController.findUserBooks = async (req, res, next) => {
   console.log('***findUserBooks middleware running***');
   const { userID } = req.params;
   const query = 'SELECT book_id FROM user_books WHERE user_id=$1';
+  try {
+  } catch (err) {}
 };
 
 bookController.addUserBook = async (req, res, next) => {
