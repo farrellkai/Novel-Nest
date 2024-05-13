@@ -14,6 +14,8 @@ bookRouter.get(
   }
 );
 
+bookRouter.get('/all-books', (req, res) => {});
+
 bookRouter.post(
   '/',
   bookController.checkMethod,
