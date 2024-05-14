@@ -3,6 +3,9 @@ import '../style.css';
 
 const BooksPage = (props) => {
   const { loggedIn, user } = props;
+
+  const getUserBooks = () => {};
+
   return (
     <div id="booksPage">
       <h1>This is the books page</h1>
