@@ -6,6 +6,7 @@ const BooksPage = (props) => {
 
   const getUserBooks = async () => {
     try {
+      const response = await fetch(`/api/book/all-books/${userID}`);
     } catch (err) {}
   };
 
