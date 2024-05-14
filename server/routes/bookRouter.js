@@ -16,7 +16,7 @@ bookRouter.get(
 
 bookRouter.get(
   '/all-books/:userID',
-  bookController.findUserBooks,
+  bookController.getAllUserBooks,
   (req, res) => {}
 );
 
