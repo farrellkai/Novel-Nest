@@ -93,7 +93,9 @@ bookController.getAllUserBooks = async (req, res, next) => {
     'SELECT b.*, ub.status FROM user_books ub JOIN books b ON ub.book_id=b._id WHERE ub.user_id=$1';
   try {
     const data = await db.query(query, [userID]);
-    res.locals.allUserBooks = data.rows;
+    res.locals.allUserBooks = data.rows.length
+      ? data.rows
+      : { bookShelf: 'empty' };
     return next();
   } catch (err) {}
 };
