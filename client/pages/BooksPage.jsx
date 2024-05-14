@@ -1,8 +1,9 @@
 import React from 'react';
 import '../style.css';
 
-const BooksPage = (props) => {
-  const { loggedIn, userID } = props;
+const BooksPage = ({loggedIn, userID}) => {
+
+  const 
 
   const getUserBooks = async () => {
     try {
