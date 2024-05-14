@@ -86,14 +86,9 @@ bookController.findUserBook = async (req, res, next) => {
   }
 };
 
-bookController.findUserBooks = async (req, res, next) => {
-  console.log('***findUserBooks middleware running***');
+bookController.getAllUserBooks = async (req, res, next) => {
+  console.log('***getAllUserBooks middleware running***');
   const { userID } = req.params;
-  const query = 'SELECT book_id FROM user_books WHERE user_id=$1';
-  try {
-    const data = await db.query(query, [userID]);
-    console.log(data.rows);
-  } catch (err) {}
 };
 
 bookController.addUserBook = async (req, res, next) => {
