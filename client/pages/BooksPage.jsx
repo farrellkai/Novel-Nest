@@ -21,7 +21,7 @@ const BooksPage = ({ loggedIn, userID }) => {
   return (
     <div id="booksPage">
       <h1>This is the books page</h1>
-      <button onClick={() => getUserBooks()}>get book data</button>
+      <h2>{bookState.length}</h2>
     </div>
   );
 };
