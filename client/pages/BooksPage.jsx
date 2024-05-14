@@ -8,7 +8,7 @@ const BooksPage = ({ loggedIn, userID }) => {
     try {
       const response = await fetch(`/api/book/all-books/${userID}`);
       const data = await response.json();
-      console.log(data);
+      setBookState(data);
     } catch (err) {
       console.log('Error:', err);
     }
