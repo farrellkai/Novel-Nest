@@ -89,6 +89,8 @@ bookController.findUserBook = async (req, res, next) => {
 bookController.getAllUserBooks = async (req, res, next) => {
   console.log('***getAllUserBooks middleware running***');
   const { userID } = req.params;
+  const query =
+    'SELECT b.*, ub.status FROM user_books ub JOIN books b ON ub.book_id=b._id WHERE ub.user_id=$1';
 };
 
 bookController.addUserBook = async (req, res, next) => {
