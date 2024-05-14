@@ -2,7 +2,7 @@ import React from 'react';
 import '../style.css';
 
 const BooksPage = (props) => {
-  const { loggedIn, user } = props;
+  const { loggedIn, userID } = props;
 
   const getUserBooks = async () => {
     try {
