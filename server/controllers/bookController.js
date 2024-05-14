@@ -97,7 +97,13 @@ bookController.getAllUserBooks = async (req, res, next) => {
       ? data.rows
       : { bookShelf: 'empty' };
     return next();
-  } catch (err) {}
+  } catch (err) {
+    return next({
+      log: 'Error in bookController.getAllUserBooks middleware function',
+      status: 500,
+      message: { err: 'cannot get user books data' },
+    });
+  }
 };
 
 bookController.addUserBook = async (req, res, next) => {
