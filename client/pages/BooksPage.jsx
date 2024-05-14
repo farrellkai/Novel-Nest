@@ -9,7 +9,9 @@ const BooksPage = (props) => {
       const response = await fetch(`/api/book/all-books/${userID}`);
       const data = await response.json();
       console.log(data);
-    } catch (err) {}
+    } catch (err) {
+      console.log('Error:', err);
+    }
   };
 
   return (
