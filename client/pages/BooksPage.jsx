@@ -14,6 +14,10 @@ const BooksPage = ({ loggedIn, userID }) => {
     }
   };
 
+  useEffect(() => {
+    getUserBooks();
+  }, []);
+
   return (
     <div id="booksPage">
       <h1>This is the books page</h1>
