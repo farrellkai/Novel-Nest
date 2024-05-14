@@ -1,9 +1,8 @@
-import React from 'react';
+import React, { useState } from 'react';
 import '../style.css';
 
-const BooksPage = ({loggedIn, userID}) => {
-
-  const 
+const BooksPage = ({ loggedIn, userID }) => {
+  const [bookState, setBookState] = useState([]);
 
   const getUserBooks = async () => {
     try {
