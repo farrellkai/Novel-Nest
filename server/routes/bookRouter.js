@@ -17,7 +17,9 @@ bookRouter.get(
 bookRouter.get(
   '/all-books/:userID',
   bookController.getAllUserBooks,
-  (req, res) => {}
+  (req, res) => {
+    return res.status(200).json(res.locals.allUserBooks);
+  }
 );
 
 bookRouter.post(
