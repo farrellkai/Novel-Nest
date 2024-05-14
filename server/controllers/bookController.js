@@ -91,6 +91,8 @@ bookController.getAllUserBooks = async (req, res, next) => {
   const { userID } = req.params;
   const query =
     'SELECT b.*, ub.status FROM user_books ub JOIN books b ON ub.book_id=b._id WHERE ub.user_id=$1';
+  try {
+  } catch (err) {}
 };
 
 bookController.addUserBook = async (req, res, next) => {
