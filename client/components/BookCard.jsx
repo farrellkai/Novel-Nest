@@ -1,7 +1,7 @@
 import React from 'react';
 
 const BookCard = (props) => {
-  console.log(props);
+  const title = { props };
   return <h1>This is a book</h1>;
 };
 
