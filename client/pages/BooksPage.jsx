@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import BookCard from '../components/BookCard';
 import '../style.css';
 
 const BooksPage = ({ loggedIn, userID }) => {
@@ -14,15 +15,15 @@ const BooksPage = ({ loggedIn, userID }) => {
     }
   };
 
+  const books = [];
+
   useEffect(() => {
     getUserBooks();
+    let i = 0;
+    while (i < bookState.length) {
+      books.push(<BookCard bookData={bookState[i]} />);
+    }
   }, []);
-
-  const books = [];
-  let i = 0;
-  while (i < bookState.length) {
-    books.push(bookState[i]);
-  }
 
   return (
     <div id="booksPage">
