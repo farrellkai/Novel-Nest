@@ -20,7 +20,9 @@ const BooksPage = ({ loggedIn, userID }) => {
 
   const books = [];
   let i = 0;
-  while (i < bookState.length) {}
+  while (i < bookState.length) {
+    books.push(bookState[i]);
+  }
 
   return (
     <div id="booksPage">
