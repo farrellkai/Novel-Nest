@@ -15,15 +15,14 @@ const BooksPage = ({ loggedIn, userID }) => {
     }
   };
 
-  const books = [];
-
   useEffect(() => {
     getUserBooks();
-    let i = 0;
-    while (i < bookState.length) {
-      books.push(<BookCard bookData={bookState[i]} />);
-    }
   }, []);
+
+  const books = [];
+  for (let book of bookState) {
+    books.push(<BookCard bookData={book} />);
+  }
 
   return (
     <div id="booksPage">
