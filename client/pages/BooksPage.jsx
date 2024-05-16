@@ -19,6 +19,8 @@ const BooksPage = ({ loggedIn, userID }) => {
   }, []);
 
   const books = [];
+  let i = 0;
+  while (i < bookState.length) {}
 
   return (
     <div id="booksPage">
