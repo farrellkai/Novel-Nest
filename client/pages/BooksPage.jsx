@@ -20,8 +20,9 @@ const BooksPage = ({ loggedIn, userID }) => {
   }, []);
 
   const books = [];
+  let i = 0;
   for (let book of bookState) {
-    books.push(<BookCard bookData={book} />);
+    books.push(<BookCard key={i} bookData={book} />);
   }
 
   return (
