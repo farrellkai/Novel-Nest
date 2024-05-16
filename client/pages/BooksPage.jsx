@@ -27,7 +27,7 @@ const BooksPage = ({ loggedIn, userID }) => {
   return (
     <div id="booksPage">
       <h1>This is the books page</h1>
-      <h2>{bookState.length}</h2>
+      <h2>{bookState.length} books</h2>
       <div>{books}</div>
     </div>
   );
