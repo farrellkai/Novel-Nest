@@ -16,7 +16,6 @@ externalController.getItem = async (req, res, next) => {
       `https://www.googleapis.com/books/v1/volumes?q=intitle:${query}&key=${API_KEY}`
     );
     const data = await response.json();
-    console.log(data);
     res.locals.results = data.totalItems;
     res.locals.items = data.items;
     return next();
