@@ -18,6 +18,8 @@ const BooksPage = ({ loggedIn, userID }) => {
     getUserBooks();
   }, []);
 
+  const books = [];
+
   return (
     <div id="booksPage">
       <h1>This is the books page</h1>
