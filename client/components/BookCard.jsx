@@ -1,7 +1,7 @@
 import React from 'react';
 
 const BookCard = ({ bookData }) => {
-  const { title } = bookData;
+  const { title, authors } = bookData;
   return <h1>{title}</h1>;
 };
 
